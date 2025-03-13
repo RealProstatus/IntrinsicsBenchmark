@@ -16,6 +16,7 @@ int main() {
 	__m256d x5 = _mm256_set_pd(-120.0, -60.0, -30.0, -15.0);
 
 	auto start = chrono::high_resolution_clock::now();
+#pragma omp parallel for
 	for (int j = 0; j < 100; j++) {
 #pragma omp parallel for
 		for (long i = 0L; i < ITERATIONS; i++) {
