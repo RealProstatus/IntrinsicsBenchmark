@@ -31,14 +31,19 @@ __ymm@c05e000000000000c04e000000000000c03e000000000000c02e000000000000:
 	.quad	0xc03e000000000000
 	.quad	0xc04e000000000000
 	.quad	0xc05e000000000000
+	.globl	__real@412e848000000000
+	.section	.rdata,"dr",discard,__real@412e848000000000
+	.p2align	3, 0x0
+__real@412e848000000000:
+	.quad	0x412e848000000000
 	.section	.text,"xr",one_only,main
 	.globl	main
 	.p2align	4, 0x90
 main:
 .Lfunc_begin0:
 	.cv_func_id 0
-	.cv_file	1 "C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark\\IntrinsicsBenchmark.cpp" "E0BE519FE8A9B01E6ABEC9B763503495" 1
-	.cv_loc	0 1 7 0
+	.cv_file	1 "C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark\\IntrinsicsBenchmark.cpp" "2179F6C7BA2159AE042893CA2BA2156C" 1
+	.cv_loc	0 1 9 0
 .seh_proc main
 	pushq	%rbp
 	.seh_pushreg %rbp
@@ -56,48 +61,48 @@ main:
 	.seh_pushreg %rdi
 	pushq	%rbx
 	.seh_pushreg %rbx
-	subq	$312, %rsp
-	.seh_stackalloc 312
+	subq	$344, %rsp
+	.seh_stackalloc 344
 	leaq	128(%rsp), %rbp
 	.seh_setframe %rbp, 128
-	vmovups	%xmm8, 160(%rbp)
-	.seh_savexmm %xmm8, 288
-	vmovups	%xmm7, 144(%rbp)
-	.seh_savexmm %xmm7, 272
-	vmovups	%xmm6, 128(%rbp)
-	.seh_savexmm %xmm6, 256
+	vmovups	%xmm8, 192(%rbp)
+	.seh_savexmm %xmm8, 320
+	vmovups	%xmm7, 176(%rbp)
+	.seh_savexmm %xmm7, 304
+	vmovups	%xmm6, 160(%rbp)
+	.seh_savexmm %xmm6, 288
 	.seh_endprologue
 	andq	$-32, %rsp
 	movq	__security_cookie(%rip), %rax
 	xorq	%rbp, %rax
-	movq	%rax, 248(%rsp)
-	vstmxcsr	192(%rsp)
-	orl	$32832, 192(%rsp)
-	vldmxcsr	192(%rsp)
+	movq	%rax, 280(%rsp)
+	vstmxcsr	224(%rsp)
+	orl	$32832, 224(%rsp)
+	vldmxcsr	224(%rsp)
 .Ltmp0:
-	.cv_loc	0 1 10 0
+	.cv_loc	0 1 12 0
 	vmovups	__ymm@4020000000000000401000000000000040000000000000003ff0000000000000(%rip), %ymm0
 .Ltmp1:
-	vmovups	%ymm0, 192(%rsp)
-	.cv_loc	0 1 11 0
+	vmovups	%ymm0, 224(%rsp)
+	.cv_loc	0 1 13 0
 	vbroadcastsd	__real@4000000000000000(%rip), %ymm0
 .Ltmp2:
-	vmovups	%ymm0, 160(%rsp)
-	.cv_loc	0 1 12 0
+	vmovups	%ymm0, 192(%rsp)
+	.cv_loc	0 1 14 0
 	vxorps	%xmm0, %xmm0, %xmm0
 .Ltmp3:
-	vmovups	%ymm0, 128(%rsp)
+	vmovups	%ymm0, 160(%rsp)
 .Ltmp4:
 	movq	%rsp, %rdi
-	.cv_loc	0 1 13 0
-	vmovups	%ymm0, 96(%rsp)
-	.cv_loc	0 1 14 0
-	vmovups	__ymm@c05e000000000000c04e000000000000c03e000000000000c02e000000000000(%rip), %ymm0
+	.cv_loc	0 1 15 0
+	vmovups	%ymm0, 128(%rsp)
+	.cv_loc	0 1 16 0
+	vmovupd	__ymm@c05e000000000000c04e000000000000c03e000000000000c02e000000000000(%rip), %ymm0
 .Ltmp5:
-	vmovups	%ymm0, 64(%rsp)
+	vmovupd	%ymm0, 96(%rsp)
 .Ltmp6:
 	.cv_file	2 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\__msvc_chrono.hpp" "1F38FB01ECF955BBE5DB7E8CD44E32E7" 1
-	.cv_inline_site_id 1 within 0 inlined_at 1 16 0
+	.cv_inline_site_id 1 within 0 inlined_at 1 18 0
 	.cv_loc	1 2 679 0
 	vzeroupper
 .Ltmp7:
@@ -118,61 +123,71 @@ main:
 	.cv_loc	1 2 710 0
 	movq	%rdi, %rsp
 .Ltmp12:
-	leaq	64(%rsp), %rax
+	.cv_loc	0 1 19 0
+	movl	"?ITERATIONS@@3JA"(%rip), %eax
+	testl	%eax, %eax
+	jle	.LBB0_12
 .Ltmp13:
-	.cv_loc	0 1 17 0
-	movq	%rax, 56(%rsp)
-	leaq	96(%rsp), %rax
-	movq	%rax, 48(%rsp)
-	leaq	128(%rsp), %rax
-	movq	%rax, 40(%rsp)
-	leaq	160(%rsp), %rax
-	movq	%rax, 32(%rsp)
-	leaq	.L.kmpc_loc.17.17(%rip), %rcx
-	leaq	main.extracted(%rip), %r8
-	leaq	192(%rsp), %r9
-	movl	$5, %edx
-	callq	__kmpc_fork_call
-	movq	%rsp, %rbx
+	decl	%eax
 .Ltmp14:
-	.cv_inline_site_id 2 within 0 inlined_at 1 24 0
+	leaq	96(%rsp), %rcx
+	movq	%rcx, 56(%rsp)
+	leaq	128(%rsp), %rcx
+	movq	%rcx, 48(%rsp)
+	leaq	160(%rsp), %rcx
+	movq	%rcx, 40(%rsp)
+	leaq	192(%rsp), %rcx
+	movq	%rcx, 32(%rsp)
+	movq	%rax, 72(%rsp)
+	movq	$0, 64(%rsp)
+	leaq	.L.kmpc_loc.19.19.4(%rip), %rcx
+	leaq	main.extracted(%rip), %r8
+	leaq	224(%rsp), %r9
+	movl	$7, %edx
+	callq	__kmpc_fork_call
+.Ltmp15:
+.LBB0_12:
+	.cv_inline_site_id 2 within 0 inlined_at 1 26 0
 	.cv_loc	2 2 679 0
+	movq	%rsp, %rbx
+.Ltmp16:
 	callq	_Query_perf_frequency
 	movq	%rax, %rdi
-.Ltmp15:
+.Ltmp17:
 	.cv_loc	2 2 680 0
 	callq	_Query_perf_counter
-.Ltmp16:
+.Ltmp18:
 	.cv_loc	2 2 687 0
 	cmpq	$10000000, %rdi
-	jne	.LBB0_11
-.Ltmp17:
+	jne	.LBB0_13
+.Ltmp19:
 	.cv_loc	2 2 693 0
 	imulq	$100, %rax, %rdi
-.Ltmp18:
-.LBB0_20:
-	.cv_inline_site_id 3 within 0 inlined_at 1 28 0
+.Ltmp20:
+.LBB0_22:
+	.cv_inline_site_id 3 within 0 inlined_at 1 30 0
 	.cv_inline_site_id 4 within 3 inlined_at 2 549 0
 	.cv_loc	4 2 291 0
 	subq	%rsi, %rdi
-.Ltmp19:
+.Ltmp21:
 	.cv_loc	2 2 710 0
 	movq	%rbx, %rsp
-.Ltmp20:
-	.cv_loc	0 1 30 0
-	vmovsd	96(%rsp), %xmm1
-	vmovsd	104(%rsp), %xmm8
-	vmovsd	112(%rsp), %xmm7
-	vmovsd	120(%rsp), %xmm6
-	movq	"__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A"(%rip), %rsi
-.Ltmp21:
-	movq	"__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@N@Z"(%rip), %r13
-	movq	%rsi, %rcx
-	callq	*%r13
-	movq	%rax, %rbx
 .Ltmp22:
+	.cv_loc	0 1 32 0
+	vmovsd	128(%rsp), %xmm1
+	vmovsd	136(%rsp), %xmm8
+	vmovsd	144(%rsp), %xmm7
+	vmovsd	152(%rsp), %xmm6
+	movq	"__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A"(%rip), %rsi
+.Ltmp23:
+	movq	"__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@N@Z"(%rip), %rbx
+	movq	%rsi, %rcx
+	callq	*%rbx
+	movq	%rbx, %r13
+	movq	%rax, %rbx
+.Ltmp24:
 	.cv_file	3 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\ostream" "10F8B9EA0A681489424FECD52A499C39" 1
-	.cv_inline_site_id 5 within 0 inlined_at 1 30 0
+	.cv_inline_site_id 5 within 0 inlined_at 1 32 0
 	.cv_inline_site_id 6 within 5 inlined_at 3 191 0
 	.cv_loc	6 3 1011 0
 	movq	(%rax), %rax
@@ -189,29 +204,10 @@ main:
 	movq	"__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ"(%rip), %r12
 	movq	%rbx, %rcx
 	callq	*%r12
-.Ltmp23:
-	.cv_loc	0 1 30 0
+.Ltmp25:
+	.cv_loc	0 1 32 0
 	movq	%rsi, %rcx
 	vmovaps	%xmm8, %xmm1
-	callq	*%r13
-	movq	%rax, %rbx
-.Ltmp24:
-	.cv_loc	6 3 1011 0
-	movq	(%rax), %rax
-	movslq	4(%rax), %rcx
-	addq	%rbx, %rcx
-	movb	$10, %dl
-	callq	*%r14
-	movq	%rbx, %rcx
-	movl	%eax, %edx
-	callq	*%r15
-	.cv_loc	6 3 1012 0
-	movq	%rbx, %rcx
-	callq	*%r12
-.Ltmp25:
-	.cv_loc	0 1 30 0
-	movq	%rsi, %rcx
-	vmovaps	%xmm7, %xmm1
 	callq	*%r13
 	movq	%rax, %rbx
 .Ltmp26:
@@ -228,9 +224,9 @@ main:
 	movq	%rbx, %rcx
 	callq	*%r12
 .Ltmp27:
-	.cv_loc	0 1 30 0
+	.cv_loc	0 1 32 0
 	movq	%rsi, %rcx
-	vmovaps	%xmm6, %xmm1
+	vmovaps	%xmm7, %xmm1
 	callq	*%r13
 	movq	%rax, %rbx
 .Ltmp28:
@@ -247,20 +243,43 @@ main:
 	movq	%rbx, %rcx
 	callq	*%r12
 .Ltmp29:
-	movabsq	$4835703278458516699, %rcx
+	.cv_loc	0 1 32 0
+	movq	%rsi, %rcx
+	vmovaps	%xmm6, %xmm1
+	callq	*%r13
+	movq	%rax, %rbx
 .Ltmp30:
-	.cv_inline_site_id 7 within 0 inlined_at 1 28 0
+	.cv_loc	6 3 1011 0
+	movq	(%rax), %rax
+	movslq	4(%rax), %rcx
+	addq	%rbx, %rcx
+	movb	$10, %dl
+	callq	*%r14
+	movq	%rbx, %rcx
+	movl	%eax, %edx
+	callq	*%r15
+	.cv_loc	6 3 1012 0
+	movq	%rbx, %rcx
+	callq	*%r12
+.Ltmp31:
+	movabsq	$4835703278458516699, %rcx
+.Ltmp32:
+	.cv_inline_site_id 7 within 0 inlined_at 1 30 0
 	.cv_loc	7 2 440 0
 	movq	%rdi, %rax
 	imulq	%rcx
 	movq	%rdx, %rdi
-.Ltmp31:
+.Ltmp33:
 	movq	%rdx, %rax
 	shrq	$63, %rax
 	sarq	$18, %rdi
 	addq	%rax, %rdi
-.Ltmp32:
-	.cv_loc	0 1 32 0
+.Ltmp34:
+	.cv_loc	0 1 35 0
+	movl	"?ITERATIONS@@3JA"(%rip), %r13d
+	shll	$3, %r13d
+.Ltmp35:
+	.cv_loc	0 1 36 0
 	leaq	"??_C@_06ELNAEDJO@Time?3?5?$AA@"(%rip), %rdx
 	movq	%rsi, %rcx
 	callq	"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
@@ -270,11 +289,41 @@ main:
 	leaq	"??_C@_0P@KCFGMNPP@?5milliseconds?$DL?$AA@"(%rip), %rdx
 	movq	%rax, %rcx
 	callq	"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
-	movq	%rax, %rsi
-.Ltmp33:
-	.cv_inline_site_id 8 within 0 inlined_at 1 32 0
+	movq	%rax, %rbx
+.Ltmp36:
+	.cv_inline_site_id 8 within 0 inlined_at 1 36 0
 	.cv_inline_site_id 9 within 8 inlined_at 3 191 0
 	.cv_loc	9 3 1011 0
+	movq	(%rax), %rax
+	movslq	4(%rax), %rcx
+	addq	%rbx, %rcx
+	movb	$10, %dl
+	callq	*%r14
+	movq	%rbx, %rcx
+	movl	%eax, %edx
+	callq	*%r15
+	.cv_loc	9 3 1012 0
+	movq	%rbx, %rcx
+	callq	*%r12
+.Ltmp37:
+	.cv_loc	0 1 37 0
+	leaq	"??_C@_0O@KOPJABAP@Performance?3?5?$AA@"(%rip), %rdx
+	movq	%rsi, %rcx
+	callq	"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
+	vcvtsi2sd	%r13d, %xmm2, %xmm0
+	vcvtsi2sd	%rdi, %xmm2, %xmm1
+	vmulsd	__real@412e848000000000(%rip), %xmm1, %xmm1
+	vdivsd	%xmm1, %xmm0, %xmm1
+	movq	%rax, %rcx
+	callq	*"__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@N@Z"(%rip)
+	leaq	"??_C@_07JIFIDNEC@?5GFLOPS?$AA@"(%rip), %rdx
+	movq	%rax, %rcx
+	callq	"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
+	movq	%rax, %rsi
+.Ltmp38:
+	.cv_inline_site_id 10 within 0 inlined_at 1 37 0
+	.cv_inline_site_id 11 within 10 inlined_at 3 191 0
+	.cv_loc	11 3 1011 0
 	movq	(%rax), %rax
 	movslq	4(%rax), %rcx
 	addq	%rsi, %rcx
@@ -283,207 +332,210 @@ main:
 	movq	%rsi, %rcx
 	movl	%eax, %edx
 	callq	*%r15
-	.cv_loc	9 3 1012 0
+	.cv_loc	11 3 1012 0
 	movq	%rsi, %rcx
 	callq	*%r12
+.Ltmp39:
+	.cv_loc	0 1 38 0
+	leaq	"??_C@_05PDJBBECF@pause?$AA@"(%rip), %rcx
+	callq	*__imp_system(%rip)
 	leaq	.L.kmpc_loc.0.0(%rip), %rcx
 	callq	__kmpc_end
-	movq	248(%rsp), %rcx
+	movq	280(%rsp), %rcx
 	xorq	%rbp, %rcx
 	callq	__security_check_cookie
-.Ltmp34:
-	.cv_loc	0 1 33 0
+	.cv_loc	0 1 39 0
 	xorl	%eax, %eax
-	vmovups	128(%rbp), %xmm6
-	vmovups	144(%rbp), %xmm7
-	vmovups	160(%rbp), %xmm8
-	leaq	184(%rbp), %rsp
-.Ltmp35:
+	vmovups	160(%rbp), %xmm6
+	vmovups	176(%rbp), %xmm7
+	vmovups	192(%rbp), %xmm8
+	leaq	216(%rbp), %rsp
 	popq	%rbx
-.Ltmp36:
+.Ltmp40:
 	popq	%rdi
-.Ltmp37:
+.Ltmp41:
 	popq	%rsi
-.Ltmp38:
+.Ltmp42:
 	popq	%r12
 	popq	%r13
+.Ltmp43:
 	popq	%r14
 	popq	%r15
 	popq	%rbp
 	retq
-.Ltmp39:
+.Ltmp44:
 .LBB0_1:
 	.cv_loc	1 2 687 0
 	cmpq	$24000000, %rsi
 	jne	.LBB0_3
-.Ltmp40:
+.Ltmp45:
 	.cv_loc	1 2 697 0
 	movabsq	$-5551535331153507085, %r9
 	movq	%rax, %rcx
-.Ltmp41:
+.Ltmp46:
 	imulq	%r9
-.Ltmp42:
+.Ltmp47:
 	movq	%rdx, %r8
 	addq	%rcx, %r8
 	movq	%r8, %rax
 	shrq	$63, %rax
 	sarq	$24, %r8
 	addq	%rax, %r8
-.Ltmp43:
+.Ltmp48:
 	imulq	$24000000, %r8, %rax
 	subq	%rax, %rcx
-.Ltmp44:
+.Ltmp49:
 	imulq	$1000000000, %rcx, %rcx
 	movq	%rcx, %rax
 	imulq	%r9
 	movq	%rdx, %rsi
-.Ltmp45:
+.Ltmp50:
 	.cv_loc	1 2 696 0
 	imulq	$1000000000, %r8, %rax
-.Ltmp46:
+.Ltmp51:
 	.cv_loc	1 2 697 0
 	addq	%rcx, %rsi
 	movq	%rsi, %rcx
 	shrq	$63, %rcx
 	sarq	$24, %rsi
 	addq	%rcx, %rsi
-.Ltmp47:
+.Ltmp52:
 	.cv_loc	1 2 698 0
 	addq	%rax, %rsi
-.Ltmp48:
+.Ltmp53:
 	jmp	.LBB0_10
-.Ltmp49:
-.LBB0_11:
+.Ltmp54:
+.LBB0_13:
 	.cv_loc	2 2 687 0
 	cmpq	$24000000, %rdi
-	jne	.LBB0_13
-.Ltmp50:
+	jne	.LBB0_15
+.Ltmp55:
 	.cv_loc	2 2 697 0
 	movabsq	$-5551535331153507085, %r9
 	movq	%rax, %rcx
-.Ltmp51:
+.Ltmp56:
 	imulq	%r9
-.Ltmp52:
+.Ltmp57:
 	movq	%rdx, %r8
 	addq	%rcx, %r8
 	movq	%r8, %rax
 	shrq	$63, %rax
 	sarq	$24, %r8
 	addq	%rax, %r8
-.Ltmp53:
+.Ltmp58:
 	imulq	$24000000, %r8, %rax
 	subq	%rax, %rcx
-.Ltmp54:
+.Ltmp59:
 	imulq	$1000000000, %rcx, %rcx
 	movq	%rcx, %rax
 	imulq	%r9
 	movq	%rdx, %rdi
-.Ltmp55:
+.Ltmp60:
 	.cv_loc	2 2 696 0
 	imulq	$1000000000, %r8, %rax
-.Ltmp56:
+.Ltmp61:
 	.cv_loc	2 2 697 0
 	addq	%rcx, %rdi
 	movq	%rdi, %rcx
 	shrq	$63, %rcx
 	sarq	$24, %rdi
 	addq	%rcx, %rdi
-.Ltmp57:
+.Ltmp62:
 	.cv_loc	2 2 698 0
 	addq	%rax, %rdi
-.Ltmp58:
-	jmp	.LBB0_20
-.Ltmp59:
+.Ltmp63:
+	jmp	.LBB0_22
+.Ltmp64:
 .LBB0_3:
 	.cv_loc	1 2 705 0
 	movq	%rax, %rcx
 	orq	%rsi, %rcx
 	shrq	$32, %rcx
 	je	.LBB0_4
-.Ltmp60:
+.Ltmp65:
 	cqto
-.Ltmp61:
+.Ltmp66:
 	idivq	%rsi
 	jmp	.LBB0_6
-.Ltmp62:
-.LBB0_13:
+.Ltmp67:
+.LBB0_15:
 	.cv_loc	2 2 705 0
 	movq	%rax, %rcx
 	orq	%rdi, %rcx
 	shrq	$32, %rcx
-	je	.LBB0_14
-.Ltmp63:
+	je	.LBB0_16
+.Ltmp68:
 	cqto
-.Ltmp64:
+.Ltmp69:
 	idivq	%rdi
-	jmp	.LBB0_16
-.Ltmp65:
+	jmp	.LBB0_18
+.Ltmp70:
 .LBB0_4:
 	.cv_loc	1 2 705 0
 	xorl	%edx, %edx
 	divl	%esi
-.Ltmp66:
+.Ltmp71:
 .LBB0_6:
 	imulq	$1000000000, %rax, %rcx
-.Ltmp67:
+.Ltmp72:
 	.cv_loc	1 2 706 0
 	imulq	$1000000000, %rdx, %rax
 	movq	%rsi, %rdx
 	orq	%rax, %rdx
 	shrq	$32, %rdx
 	je	.LBB0_7
-.Ltmp68:
+.Ltmp73:
 	cqto
 	idivq	%rsi
 	movq	%rax, %rsi
-.Ltmp69:
+.Ltmp74:
 	jmp	.LBB0_9
-.Ltmp70:
-.LBB0_14:
+.Ltmp75:
+.LBB0_16:
 	.cv_loc	2 2 705 0
 	xorl	%edx, %edx
 	divl	%edi
-.Ltmp71:
-.LBB0_16:
+.Ltmp76:
+.LBB0_18:
 	imulq	$1000000000, %rax, %rcx
-.Ltmp72:
+.Ltmp77:
 	.cv_loc	2 2 706 0
 	imulq	$1000000000, %rdx, %rax
 	movq	%rdi, %rdx
 	orq	%rax, %rdx
 	shrq	$32, %rdx
-	je	.LBB0_17
-.Ltmp73:
+	je	.LBB0_19
+.Ltmp78:
 	cqto
 	idivq	%rdi
 	movq	%rax, %rdi
-.Ltmp74:
-	jmp	.LBB0_19
-.Ltmp75:
+.Ltmp79:
+	jmp	.LBB0_21
+.Ltmp80:
 .LBB0_7:
 	.cv_loc	1 2 706 0
 	xorl	%edx, %edx
 	divl	%esi
 	movl	%eax, %esi
-.Ltmp76:
+.Ltmp81:
 .LBB0_9:
 	.cv_loc	1 2 707 0
 	addq	%rcx, %rsi
-.Ltmp77:
+.Ltmp82:
 	jmp	.LBB0_10
-.Ltmp78:
-.LBB0_17:
+.Ltmp83:
+.LBB0_19:
 	.cv_loc	2 2 706 0
 	xorl	%edx, %edx
 	divl	%edi
 	movl	%eax, %edi
-.Ltmp79:
-.LBB0_19:
+.Ltmp84:
+.LBB0_21:
 	.cv_loc	2 2 707 0
 	addq	%rcx, %rdi
-.Ltmp80:
-	jmp	.LBB0_20
-.Ltmp81:
+.Ltmp85:
+	jmp	.LBB0_22
+.Ltmp86:
 .Lfunc_end0:
 	.seh_endproc
 
@@ -496,8 +548,8 @@ main:
 	.p2align	4, 0x90
 "??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z":
 .Lfunc_begin1:
-	.cv_func_id 10
-	.cv_loc	10 3 766 0
+	.cv_func_id 12
+	.cv_loc	12 3 766 0
 .seh_proc "??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
 	.seh_handler __CxxFrameHandler3, @unwind, @except
 	pushq	%rbp
@@ -520,304 +572,304 @@ main:
 	movq	$-2, (%rbp)
 	movq	%rdx, %rdi
 	movq	%rcx, %r15
-.Ltmp96:
+.Ltmp101:
 	.cv_file	4 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\xstring" "82CCE7FA2B47DF84739F6D6164E3803F" 1
-	.cv_inline_site_id 11 within 10 inlined_at 3 772 0
-	.cv_loc	11 4 398 0
+	.cv_inline_site_id 13 within 12 inlined_at 3 772 0
+	.cv_loc	13 4 398 0
 	movq	%rdx, %rcx
-.Ltmp97:
+.Ltmp102:
 	callq	strlen
-.Ltmp98:
+.Ltmp103:
 	movq	%rax, %rsi
-.Ltmp99:
-	.cv_loc	10 3 773 0
+.Ltmp104:
+	.cv_loc	12 3 773 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rcx
-.Ltmp100:
+.Ltmp105:
 	.cv_file	5 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\xiosbase" "A9A6E1B9687D23A07817B3100FDB8427" 1
-	.cv_inline_site_id 12 within 10 inlined_at 3 773 0
-	.cv_loc	12 5 280 0
+	.cv_inline_site_id 14 within 12 inlined_at 3 773 0
+	.cv_loc	14 5 280 0
 	movq	40(%r15,%rcx), %rax
 	xorl	%edx, %edx
-.Ltmp101:
-	.cv_loc	10 3 773 0
+.Ltmp106:
+	.cv_loc	12 3 773 0
 	movq	%rax, %r14
 	subq	%rsi, %r14
 	movl	$0, %ebx
 	cmovgq	%r14, %rbx
 	testq	%rax, %rax
 	cmovleq	%rdx, %rbx
-.Ltmp102:
-	.cv_inline_site_id 13 within 10 inlined_at 3 774 0
-	.cv_inline_site_id 14 within 13 inlined_at 3 96 0
-	.cv_loc	14 3 75 0
+.Ltmp107:
+	.cv_inline_site_id 15 within 12 inlined_at 3 774 0
+	.cv_inline_site_id 16 within 15 inlined_at 3 96 0
+	.cv_loc	16 3 75 0
 	movq	%r15, -32(%rbp)
-.Ltmp103:
+.Ltmp108:
 	.cv_file	6 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\ios" "18F7C9A507B814F4764E58C39A966E8E" 1
-	.cv_inline_site_id 15 within 14 inlined_at 3 76 0
-	.cv_loc	15 6 78 0
+	.cv_inline_site_id 17 within 16 inlined_at 3 76 0
+	.cv_loc	17 6 78 0
 	movq	72(%r15,%rcx), %rax
-.Ltmp104:
-	.cv_loc	14 3 77 0
+.Ltmp109:
+	.cv_loc	16 3 77 0
 	testq	%rax, %rax
 	je	.LBB1_2
-.Ltmp105:
-	.cv_loc	14 3 78 0
+.Ltmp110:
+	.cv_loc	16 3 78 0
 	movq	(%rax), %rdx
 	movq	%rax, %rcx
 	callq	*8(%rdx)
-.Ltmp106:
-	.cv_loc	13 3 97 0
+.Ltmp111:
+	.cv_loc	15 3 97 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rcx
-.Ltmp107:
+.Ltmp112:
 .LBB1_2:
 	addq	%r15, %rcx
 	callq	*"__imp_?good@ios_base@std@@QEBA_NXZ"(%rip)
 	testb	%al, %al
 	movq	%r15, -8(%rbp)
-.Ltmp108:
+.Ltmp113:
 	je	.LBB1_3
-.Ltmp109:
-	.cv_loc	13 3 102 0
+.Ltmp114:
+	.cv_loc	15 3 102 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rcx
-.Ltmp110:
-	.cv_inline_site_id 16 within 13 inlined_at 3 102 0
-	.cv_loc	16 6 68 0
+.Ltmp115:
+	.cv_inline_site_id 18 within 15 inlined_at 3 102 0
+	.cv_loc	18 6 68 0
 	movq	80(%r15,%rcx), %rcx
-.Ltmp111:
-	.cv_loc	13 3 103 0
+.Ltmp116:
+	.cv_loc	15 3 103 0
 	testq	%rcx, %rcx
 	je	.LBB1_12
-.Ltmp112:
+.Ltmp117:
 	cmpq	%r15, %rcx
 	je	.LBB1_12
-.Ltmp113:
-	.cv_loc	13 3 108 0
-.Ltmp82:
+.Ltmp118:
+	.cv_loc	15 3 108 0
+.Ltmp87:
 	callq	*"__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ"(%rip)
-.Ltmp114:
-.Ltmp83:
-	.cv_loc	13 3 109 0
+.Ltmp119:
+.Ltmp88:
+	.cv_loc	15 3 109 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rcx
 	addq	%r15, %rcx
 	callq	*"__imp_?good@ios_base@std@@QEBA_NXZ"(%rip)
 	movb	%al, -24(%rbp)
 	movl	$4, -12(%rbp)
-.Ltmp115:
-	.cv_loc	10 3 776 0
+.Ltmp120:
+	.cv_loc	12 3 776 0
 	testb	%al, %al
 	je	.LBB1_4
-.Ltmp116:
-	.cv_loc	10 3 780 0
+.Ltmp121:
+	.cv_loc	12 3 780 0
 	movq	-8(%rbp), %r15
-.Ltmp117:
+.Ltmp122:
 	movq	(%r15), %rax
 	jmp	.LBB1_17
-.Ltmp118:
+.Ltmp123:
 .LBB1_3:
-	.cv_loc	13 3 98 0
+	.cv_loc	15 3 98 0
 	movb	$0, -24(%rbp)
 	movl	$4, -12(%rbp)
 	jmp	.LBB1_4
-.Ltmp119:
+.Ltmp124:
 .LBB1_12:
-	.cv_loc	13 3 104 0
+	.cv_loc	15 3 104 0
 	movb	$1, -24(%rbp)
-.Ltmp120:
+.Ltmp125:
 .LBB1_17:
-	.cv_loc	10 3 780 0
+	.cv_loc	12 3 780 0
 	movslq	4(%rax), %rax
 	movl	$448, %ecx
 	andl	24(%r15,%rax), %ecx
 	cmpl	$64, %ecx
 	je	.LBB1_26
-.Ltmp121:
+.Ltmp126:
 	testq	%rbx, %rbx
 	jle	.LBB1_26
-.Ltmp122:
+.Ltmp127:
 	movq	"__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z"(%rip), %rbx
-.Ltmp123:
+.Ltmp128:
 	.p2align	4, 0x90
 .LBB1_20:
-	.cv_loc	10 3 782 0
+	.cv_loc	12 3 782 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rax
-.Ltmp124:
-	.cv_inline_site_id 17 within 10 inlined_at 3 782 0
-	.cv_loc	17 6 78 0
-	movq	72(%r15,%rax), %rcx
-.Ltmp125:
-	.cv_inline_site_id 18 within 10 inlined_at 3 782 0
-	.cv_loc	18 6 99 0
-	movzbl	88(%r15,%rax), %edx
-.Ltmp126:
-	.cv_loc	10 3 782 0
-.Ltmp84:
-	callq	*%rbx
-.Ltmp127:
-.Ltmp85:
-	.cv_inline_site_id 19 within 10 inlined_at 3 782 0
-	.cv_loc	19 4 464 0
-	cmpl	$-1, %eax
-.Ltmp128:
-	.cv_loc	10 3 782 0
-	je	.LBB1_22
 .Ltmp129:
-	.cv_loc	10 3 781 0
-	leaq	-1(%r14), %rax
+	.cv_inline_site_id 19 within 12 inlined_at 3 782 0
+	.cv_loc	19 6 78 0
+	movq	72(%r15,%rax), %rcx
 .Ltmp130:
-	.cv_loc	10 3 781 0
+	.cv_inline_site_id 20 within 12 inlined_at 3 782 0
+	.cv_loc	20 6 99 0
+	movzbl	88(%r15,%rax), %edx
+.Ltmp131:
+	.cv_loc	12 3 782 0
+.Ltmp89:
+	callq	*%rbx
+.Ltmp132:
+.Ltmp90:
+	.cv_inline_site_id 21 within 12 inlined_at 3 782 0
+	.cv_loc	21 4 464 0
+	cmpl	$-1, %eax
+.Ltmp133:
+	.cv_loc	12 3 782 0
+	je	.LBB1_22
+.Ltmp134:
+	.cv_loc	12 3 781 0
+	leaq	-1(%r14), %rax
+.Ltmp135:
+	.cv_loc	12 3 781 0
 	cmpq	$1, %r14
 	movq	%rax, %r14
-.Ltmp131:
+.Ltmp136:
 	movq	-8(%rbp), %r15
 	jg	.LBB1_20
-.Ltmp132:
-	.cv_loc	10 3 789 0
+.Ltmp137:
+	.cv_loc	12 3 789 0
 	movq	(%r15), %rax
 	movslq	4(%rax), %rax
 	xorl	%ebx, %ebx
-.Ltmp133:
+.Ltmp138:
 .LBB1_26:
-	.cv_inline_site_id 20 within 10 inlined_at 3 789 0
-	.cv_loc	20 6 78 0
+	.cv_inline_site_id 22 within 12 inlined_at 3 789 0
+	.cv_loc	22 6 78 0
 	movq	72(%r15,%rax), %rcx
-.Ltmp134:
+.Ltmp139:
 	.cv_file	7 "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.39.33519\\include\\streambuf" "DCCB1AC684312409303E4D66E7083699" 1
-	.cv_inline_site_id 21 within 10 inlined_at 3 789 0
-	.cv_loc	21 7 171 0
+	.cv_inline_site_id 23 within 12 inlined_at 3 789 0
+	.cv_loc	23 7 171 0
 	movq	(%rcx), %rax
-.Ltmp135:
-.Ltmp86:
+.Ltmp140:
+.Ltmp91:
 	movq	%rdi, %rdx
 	movq	%rsi, %r8
 	callq	*72(%rax)
-.Ltmp136:
-.Ltmp87:
-	.cv_loc	10 3 789 0
+.Ltmp141:
+.Ltmp92:
+	.cv_loc	12 3 789 0
 	cmpq	%rsi, %rax
 	jne	.LBB1_22
-.Ltmp137:
-	.cv_loc	10 3 793 0
+.Ltmp142:
+	.cv_loc	12 3 793 0
 	testq	%rbx, %rbx
 	movq	-8(%rbp), %rdx
 	jle	.LBB1_33
-.Ltmp138:
+.Ltmp143:
 	movq	"__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z"(%rip), %rsi
-.Ltmp139:
+.Ltmp144:
 	.p2align	4, 0x90
 .LBB1_30:
-	.cv_loc	10 3 795 0
+	.cv_loc	12 3 795 0
 	movq	(%rdx), %rax
 	movslq	4(%rax), %rax
-.Ltmp140:
-	.cv_inline_site_id 22 within 10 inlined_at 3 795 0
-	.cv_loc	22 6 78 0
+.Ltmp145:
+	.cv_inline_site_id 24 within 12 inlined_at 3 795 0
+	.cv_loc	24 6 78 0
 	movq	72(%rdx,%rax), %rcx
-.Ltmp141:
-	.cv_inline_site_id 23 within 10 inlined_at 3 795 0
-	.cv_loc	23 6 99 0
+.Ltmp146:
+	.cv_inline_site_id 25 within 12 inlined_at 3 795 0
+	.cv_loc	25 6 99 0
 	movzbl	88(%rdx,%rax), %edx
-.Ltmp142:
-	.cv_loc	10 3 795 0
-.Ltmp88:
+.Ltmp147:
+	.cv_loc	12 3 795 0
+.Ltmp93:
 	callq	*%rsi
-.Ltmp143:
-.Ltmp89:
-	.cv_inline_site_id 24 within 10 inlined_at 3 795 0
-	.cv_loc	24 4 464 0
+.Ltmp148:
+.Ltmp94:
+	.cv_inline_site_id 26 within 12 inlined_at 3 795 0
+	.cv_loc	26 4 464 0
 	cmpl	$-1, %eax
 	je	.LBB1_22
-.Ltmp144:
-	.cv_loc	10 3 794 0
+.Ltmp149:
+	.cv_loc	12 3 794 0
 	leaq	-1(%rbx), %rax
-.Ltmp145:
-	.cv_loc	10 3 794 0
+.Ltmp150:
+	.cv_loc	12 3 794 0
 	cmpq	$1, %rbx
 	movq	%rax, %rbx
-.Ltmp146:
+.Ltmp151:
 	movq	-8(%rbp), %rdx
 	jg	.LBB1_30
-.Ltmp147:
+.Ltmp152:
 .LBB1_33:
 	xorl	%eax, %eax
 	jmp	.LBB1_23
-.Ltmp148:
+.Ltmp153:
 .LBB1_22:
 	movl	$4, %eax
 	movq	-8(%rbp), %rdx
-.Ltmp149:
+.Ltmp154:
 .LBB1_23:
-	.cv_loc	10 3 802 0
+	.cv_loc	12 3 802 0
 	movl	%eax, -12(%rbp)
-.Ltmp150:
+.Ltmp155:
 	movq	(%rdx), %rax
 	movslq	4(%rax), %rax
-.Ltmp151:
-	.cv_inline_site_id 25 within 10 inlined_at 3 802 0
-	.cv_loc	25 5 286 0
+.Ltmp156:
+	.cv_inline_site_id 27 within 12 inlined_at 3 802 0
+	.cv_loc	27 5 286 0
 	movq	$0, 40(%rdx,%rax)
-.Ltmp152:
+.Ltmp157:
 .LBB1_4:
 $ehgcr_1_4:
-	.cv_loc	10 3 806 0
+	.cv_loc	12 3 806 0
 	movq	-8(%rbp), %r8
 	movq	(%r8), %rax
 	movslq	4(%rax), %rax
 	leaq	(%r8,%rax), %rcx
-.Ltmp153:
+.Ltmp158:
 	movl	-12(%rbp), %edx
-.Ltmp154:
-	.cv_inline_site_id 26 within 10 inlined_at 3 806 0
-	.cv_loc	26 6 51 0
+.Ltmp159:
+	.cv_inline_site_id 28 within 12 inlined_at 3 806 0
+	.cv_loc	28 6 51 0
 	orl	16(%r8,%rax), %edx
-.Ltmp92:
+.Ltmp97:
 	xorl	%r8d, %r8d
 	callq	*"__imp_?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z"(%rip)
-.Ltmp155:
-.Ltmp93:
-	.cv_inline_site_id 27 within 10 inlined_at 3 808 0
-	.cv_loc	27 3 117 0
+.Ltmp160:
+.Ltmp98:
+	.cv_inline_site_id 29 within 12 inlined_at 3 808 0
+	.cv_loc	29 3 117 0
 	callq	"?uncaught_exception@std@@YA_NXZ"
-.Ltmp156:
-	.cv_inline_site_id 28 within 27 inlined_at 3 125 0
-	.cv_loc	28 3 83 0
+.Ltmp161:
+	.cv_inline_site_id 30 within 29 inlined_at 3 125 0
+	.cv_loc	30 3 83 0
 	movq	-32(%rbp), %rsi
-.Ltmp157:
-	.cv_loc	27 3 122 0
+.Ltmp162:
+	.cv_loc	29 3 122 0
 	testb	%al, %al
 	jne	.LBB1_7
-.Ltmp158:
-	.cv_loc	27 3 123 0
+.Ltmp163:
+	.cv_loc	29 3 123 0
 	movq	%rsi, %rcx
 	callq	*"__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ"(%rip)
-.Ltmp159:
+.Ltmp164:
 .LBB1_7:
-	.cv_loc	28 3 83 0
+	.cv_loc	30 3 83 0
 	movq	(%rsi), %rax
 	movslq	4(%rax), %rax
-.Ltmp160:
-	.cv_inline_site_id 29 within 28 inlined_at 3 83 0
-	.cv_loc	29 6 78 0
+.Ltmp165:
+	.cv_inline_site_id 31 within 30 inlined_at 3 83 0
+	.cv_loc	31 6 78 0
 	movq	72(%rsi,%rax), %rcx
-.Ltmp161:
-	.cv_loc	28 3 84 0
+.Ltmp166:
+	.cv_loc	30 3 84 0
 	testq	%rcx, %rcx
 	movq	-8(%rbp), %rsi
-.Ltmp162:
+.Ltmp167:
 	je	.LBB1_9
-.Ltmp163:
-	.cv_loc	28 3 85 0
+.Ltmp168:
+	.cv_loc	30 3 85 0
 	movq	(%rcx), %rax
-.Ltmp94:
+.Ltmp99:
 	callq	*16(%rax)
-.Ltmp164:
-.Ltmp95:
+.Ltmp169:
+.Ltmp100:
 .LBB1_9:
-	.cv_loc	10 3 808 0
+	.cv_loc	12 3 808 0
 	movq	%rsi, %rax
 	addq	$72, %rsp
 	popq	%rbx
@@ -827,7 +879,7 @@ $ehgcr_1_4:
 	popq	%r15
 	popq	%rbp
 	retq
-.Ltmp165:
+.Ltmp170:
 	.seh_handlerdata
 	.long	("$cppxdata$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z")@IMGREL
 	.section	.text,"xr",discard,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
@@ -856,25 +908,25 @@ $ehgcr_1_4:
 	subq	$40, %rsp
 	.seh_stackalloc 40
 	leaq	64(%rdx), %rbp
-.Ltmp166:
+.Ltmp171:
 	.seh_endprologue
 	leaq	-32(%rbp), %rcx
-.Ltmp167:
-	.cv_loc	13 3 110 0
+.Ltmp172:
+	.cv_loc	15 3 110 0
 	callq	"??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	nop
 	addq	$40, %rsp
 	popq	%rbx
-.Ltmp168:
+.Ltmp173:
 	popq	%rdi
-.Ltmp169:
+.Ltmp174:
 	popq	%rsi
-.Ltmp170:
+.Ltmp175:
 	popq	%r14
 	popq	%r15
 	popq	%rbp
 	retq
-.Ltmp171:
+.Ltmp176:
 	.seh_handlerdata
 	.section	.text,"xr",discard,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
 	.seh_endproc
@@ -903,40 +955,40 @@ $ehgcr_1_4:
 	subq	$40, %rsp
 	.seh_stackalloc 40
 	leaq	64(%rdx), %rbp
-.Ltmp172:
+.Ltmp177:
 	.seh_endprologue
 	movq	-8(%rbp), %rdx
-.Ltmp173:
-	.cv_loc	10 3 803 0
+.Ltmp178:
+	.cv_loc	12 3 803 0
 	movq	(%rdx), %rax
 	movslq	4(%rax), %rax
 	leaq	(%rdx,%rax), %rcx
-.Ltmp174:
-	.cv_inline_site_id 30 within 10 inlined_at 3 803 0
-	.cv_inline_site_id 31 within 30 inlined_at 6 51 0
-	.cv_loc	31 5 189 0
+.Ltmp179:
+	.cv_inline_site_id 32 within 12 inlined_at 3 803 0
+	.cv_inline_site_id 33 within 32 inlined_at 6 51 0
+	.cv_loc	33 5 189 0
 	movl	16(%rdx,%rax), %edx
-.Ltmp175:
-	.cv_loc	30 6 51 0
+.Ltmp180:
+	.cv_loc	32 6 51 0
 	orl	$4, %edx
-.Ltmp90:
+.Ltmp95:
 	movb	$1, %r8b
 	callq	*"__imp_?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z"(%rip)
-.Ltmp176:
-.Ltmp91:
-	.cv_loc	10 3 803 0
+.Ltmp181:
+.Ltmp96:
+	.cv_loc	12 3 803 0
 	movl	$0, -12(%rbp)
 	leaq	.LBB1_4(%rip), %rax
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%rdi
-.Ltmp177:
+.Ltmp182:
 	popq	%rsi
 	popq	%r14
 	popq	%r15
 	popq	%rbp
 	retq
-.Ltmp178:
+.Ltmp183:
 	.seh_handlerdata
 	.long	("$cppxdata$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z")@IMGREL
 	.section	.text,"xr",discard,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
@@ -952,7 +1004,7 @@ $ehgcr_1_4:
 	movq	%rdx, 16(%rsp)
 	pushq	%rbp
 	.seh_pushreg %rbp
-.Ltmp179:
+.Ltmp184:
 	pushq	%r15
 	.seh_pushreg %r15
 	pushq	%r14
@@ -966,12 +1018,12 @@ $ehgcr_1_4:
 	subq	$40, %rsp
 	.seh_stackalloc 40
 	leaq	64(%rdx), %rbp
-.Ltmp180:
+.Ltmp185:
 	.seh_endprologue
-	.cv_loc	28 3 85 0
+	.cv_loc	30 3 85 0
 	callq	__std_terminate
 	int3
-.Ltmp181:
+.Ltmp186:
 	.seh_handlerdata
 	.section	.text,"xr",discard,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
 	.seh_endproc
@@ -999,10 +1051,10 @@ $ehgcr_1_4:
 	subq	$40, %rsp
 	.seh_stackalloc 40
 	leaq	64(%rdx), %rbp
-.Ltmp182:
+.Ltmp187:
 	.seh_endprologue
 	leaq	-32(%rbp), %rcx
-	.cv_loc	10 3 808 0
+	.cv_loc	12 3 808 0
 	callq	"??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	nop
 	addq	$40, %rsp
@@ -1013,7 +1065,7 @@ $ehgcr_1_4:
 	popq	%r15
 	popq	%rbp
 	retq
-.Ltmp183:
+.Ltmp188:
 .Lfunc_end1:
 	.seh_handlerdata
 	.section	.text,"xr",discard,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
@@ -1057,15 +1109,15 @@ $ehgcr_1_4:
 "$ip2state$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z":
 	.long	.Lfunc_begin1@IMGREL
 	.long	-1
-	.long	.Ltmp82@IMGREL+1
+	.long	.Ltmp87@IMGREL+1
 	.long	0
-	.long	.Ltmp84@IMGREL+1
+	.long	.Ltmp89@IMGREL+1
 	.long	3
-	.long	.Ltmp92@IMGREL+1
+	.long	.Ltmp97@IMGREL+1
 	.long	2
-	.long	.Ltmp94@IMGREL+1
+	.long	.Ltmp99@IMGREL+1
 	.long	1
-	.long	.Ltmp95@IMGREL+1
+	.long	.Ltmp100@IMGREL+1
 	.long	-1
 	.long	"?catch$34@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA"@IMGREL
 	.long	4
@@ -1080,8 +1132,8 @@ $ehgcr_1_4:
 	.p2align	4, 0x90
 "??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ":
 .Lfunc_begin2:
-	.cv_func_id 32
-	.cv_loc	32 3 113 0
+	.cv_func_id 34
+	.cv_loc	34 3 113 0
 .seh_proc "??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	.seh_handler __CxxFrameHandler3, @unwind, @except
 	pushq	%rbp
@@ -1095,48 +1147,48 @@ $ehgcr_1_4:
 	.seh_endprologue
 	movq	$-2, (%rbp)
 	movq	%rcx, %rsi
-.Ltmp186:
-	.cv_loc	32 3 117 0
+.Ltmp191:
+	.cv_loc	34 3 117 0
 	callq	"?uncaught_exception@std@@YA_NXZ"
-.Ltmp187:
-	.cv_loc	32 3 122 0
+.Ltmp192:
+	.cv_loc	34 3 122 0
 	testb	%al, %al
 	jne	.LBB2_2
-.Ltmp188:
-	.cv_loc	32 3 123 0
+.Ltmp193:
+	.cv_loc	34 3 123 0
 	movq	(%rsi), %rcx
 	callq	*"__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ"(%rip)
-.Ltmp189:
+.Ltmp194:
 .LBB2_2:
-	.cv_inline_site_id 33 within 32 inlined_at 3 125 0
-	.cv_loc	33 3 83 0
+	.cv_inline_site_id 35 within 34 inlined_at 3 125 0
+	.cv_loc	35 3 83 0
 	movq	(%rsi), %rax
 	movq	(%rax), %rcx
 	movslq	4(%rcx), %rcx
-.Ltmp190:
-	.cv_inline_site_id 34 within 33 inlined_at 3 83 0
-	.cv_loc	34 6 78 0
+.Ltmp195:
+	.cv_inline_site_id 36 within 35 inlined_at 3 83 0
+	.cv_loc	36 6 78 0
 	movq	72(%rax,%rcx), %rcx
-.Ltmp191:
-	.cv_loc	33 3 84 0
+.Ltmp196:
+	.cv_loc	35 3 84 0
 	testq	%rcx, %rcx
 	je	.LBB2_4
-.Ltmp192:
-	.cv_loc	33 3 85 0
+.Ltmp197:
+	.cv_loc	35 3 85 0
 	movq	(%rcx), %rax
-.Ltmp184:
+.Ltmp189:
 	callq	*16(%rax)
-.Ltmp193:
-.Ltmp185:
+.Ltmp198:
+.Ltmp190:
 .LBB2_4:
-	.cv_loc	32 3 125 0
+	.cv_loc	34 3 125 0
 	nop
 	addq	$40, %rsp
 	popq	%rsi
-.Ltmp194:
+.Ltmp199:
 	popq	%rbp
 	retq
-.Ltmp195:
+.Ltmp200:
 	.seh_handlerdata
 	.long	("$cppxdata$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ")@IMGREL
 	.section	.text,"xr",discard,"??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
@@ -1152,17 +1204,17 @@ $ehgcr_1_4:
 	movq	%rdx, 16(%rsp)
 	pushq	%rbp
 	.seh_pushreg %rbp
-.Ltmp196:
+.Ltmp201:
 	pushq	%rsi
 	.seh_pushreg %rsi
 	subq	$40, %rsp
 	.seh_stackalloc 40
 	leaq	32(%rdx), %rbp
 	.seh_endprologue
-	.cv_loc	33 3 85 0
+	.cv_loc	35 3 85 0
 	callq	__std_terminate
 	int3
-.Ltmp197:
+.Ltmp202:
 .Lfunc_end2:
 	.seh_handlerdata
 	.section	.text,"xr",discard,"??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
@@ -1186,9 +1238,9 @@ $ehgcr_1_4:
 "$ip2state$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ":
 	.long	.Lfunc_begin2@IMGREL
 	.long	-1
-	.long	.Ltmp184@IMGREL+1
+	.long	.Ltmp189@IMGREL+1
 	.long	0
-	.long	.Ltmp185@IMGREL+1
+	.long	.Ltmp190@IMGREL+1
 	.long	-1
 	.section	.text,"xr",discard,"??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 
@@ -1201,8 +1253,8 @@ $ehgcr_1_4:
 	.p2align	4, 0x90
 "??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ":
 .Lfunc_begin3:
-	.cv_func_id 35
-	.cv_loc	35 3 82 0
+	.cv_func_id 37
+	.cv_loc	37 3 82 0
 .seh_proc "??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	.seh_handler __CxxFrameHandler3, @unwind, @except
 	pushq	%rbp
@@ -1212,35 +1264,35 @@ $ehgcr_1_4:
 	leaq	48(%rsp), %rbp
 	.seh_setframe %rbp, 48
 	.seh_endprologue
-.Ltmp200:
-	.cv_loc	35 3 83 0
+.Ltmp205:
+	.cv_loc	37 3 83 0
 	movq	$-2, -8(%rbp)
 	movq	(%rcx), %rax
 	movq	(%rax), %rcx
-.Ltmp201:
+.Ltmp206:
 	movslq	4(%rcx), %rcx
-.Ltmp202:
-	.cv_inline_site_id 36 within 35 inlined_at 3 83 0
-	.cv_loc	36 6 78 0
+.Ltmp207:
+	.cv_inline_site_id 38 within 37 inlined_at 3 83 0
+	.cv_loc	38 6 78 0
 	movq	72(%rax,%rcx), %rcx
-.Ltmp203:
-	.cv_loc	35 3 84 0
+.Ltmp208:
+	.cv_loc	37 3 84 0
 	testq	%rcx, %rcx
 	je	.LBB3_2
-.Ltmp204:
-	.cv_loc	35 3 85 0
+.Ltmp209:
+	.cv_loc	37 3 85 0
 	movq	(%rcx), %rax
-.Ltmp198:
+.Ltmp203:
 	callq	*16(%rax)
-.Ltmp205:
-.Ltmp199:
+.Ltmp210:
+.Ltmp204:
 .LBB3_2:
-	.cv_loc	35 3 87 0
+	.cv_loc	37 3 87 0
 	nop
 	addq	$48, %rsp
 	popq	%rbp
 	retq
-.Ltmp206:
+.Ltmp211:
 	.seh_handlerdata
 	.long	("$cppxdata$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ")@IMGREL
 	.section	.text,"xr",discard,"??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
@@ -1260,11 +1312,11 @@ $ehgcr_1_4:
 	.seh_stackalloc 32
 	leaq	48(%rdx), %rbp
 	.seh_endprologue
-.Ltmp207:
-	.cv_loc	35 3 85 0
+.Ltmp212:
+	.cv_loc	37 3 85 0
 	callq	__std_terminate
 	int3
-.Ltmp208:
+.Ltmp213:
 .Lfunc_end3:
 	.seh_handlerdata
 	.section	.text,"xr",discard,"??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
@@ -1288,9 +1340,9 @@ $ehgcr_1_4:
 "$ip2state$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ":
 	.long	.Lfunc_begin3@IMGREL
 	.long	-1
-	.long	.Ltmp198@IMGREL+1
+	.long	.Ltmp203@IMGREL+1
 	.long	0
-	.long	.Ltmp199@IMGREL+1
+	.long	.Ltmp204@IMGREL+1
 	.long	-1
 	.section	.text,"xr",discard,"??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 
@@ -1302,97 +1354,210 @@ $ehgcr_1_4:
 	.p2align	4, 0x90
 main.extracted:
 .Lfunc_begin4:
-	.cv_func_id 37
-	.cv_loc	37 1 17 0
-	movq	48(%rsp), %rax
-	movq	56(%rsp), %rcx
-	movq	40(%rsp), %rdx
-	vmovupd	(%r9), %ymm0
-	vmovupd	(%rdx), %ymm1
-	vmovupd	(%rcx), %ymm2
-	vmovupd	(%r8), %ymm3
-	movl	$62500000, %ecx
-.Ltmp209:
-	.p2align	4, 0x90
-.LBB4_1:
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 22 0
-	vfmadd213pd	%ymm2, %ymm0, %ymm3
-	.cv_loc	37 1 19 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 20 0
-	vfmadd213pd	%ymm1, %ymm0, %ymm3
-	.cv_loc	37 1 21 0
-	vmovapd	%ymm3, %ymm4
-	vfmadd213pd	%ymm1, %ymm0, %ymm4
-	.cv_loc	37 1 22 0
-	vmovapd	%ymm0, %ymm3
-	vfmadd213pd	%ymm2, %ymm4, %ymm3
-.Ltmp210:
-	.cv_loc	37 1 18 0
-	decl	%ecx
-	jne	.LBB4_1
-.Ltmp211:
-	.cv_loc	37 1 21 0
-	vmovupd	%ymm3, (%r8)
-	vmovupd	%ymm4, (%rax)
+	.cv_func_id 39
+	.cv_loc	39 1 19 0
+.seh_proc main.extracted
+	pushq	%rsi
+	.seh_pushreg %rsi
+	pushq	%rdi
+	.seh_pushreg %rdi
+	pushq	%rbx
+	.seh_pushreg %rbx
+	subq	$208, %rsp
+	.seh_stackalloc 208
+	.seh_endprologue
+	movq	%r8, %rsi
+	movq	280(%rsp), %rbx
+	movl	304(%rsp), %eax
+.Ltmp214:
+	movq	288(%rsp), %rdx
+.Ltmp215:
+	movq	272(%rsp), %r8
+.Ltmp216:
+	movq	__security_cookie(%rip), %r10
+	xorq	%rsp, %r10
+	movq	%r10, 200(%rsp)
+	movl	$0, 196(%rsp)
+	vmovups	(%r9), %ymm0
+	vmovups	%ymm0, 144(%rsp)
+	vmovups	(%r8), %ymm0
+	vmovups	%ymm0, 112(%rsp)
+	vmovupd	(%rdx), %ymm0
+.Ltmp217:
+	vmovupd	%ymm0, 80(%rsp)
+.Ltmp218:
+	.cv_loc	39 1 19 0
+	movl	(%rcx), %edi
+	movl	$0, 192(%rsp)
+	movl	%eax, 188(%rsp)
+	movl	$1, 184(%rsp)
+	leaq	184(%rsp), %rax
+.Ltmp219:
+	movq	%rax, 48(%rsp)
+	leaq	188(%rsp), %rax
+	movq	%rax, 40(%rsp)
+	leaq	192(%rsp), %rax
+	movq	%rax, 32(%rsp)
+	movl	$1, 64(%rsp)
+	movl	$1, 56(%rsp)
+	leaq	.L.kmpc_loc.19.19(%rip), %rcx
+	leaq	196(%rsp), %r9
+.Ltmp220:
+	movl	%edi, %edx
+.Ltmp221:
+	movl	$34, %r8d
+.Ltmp222:
 	vzeroupper
-	retq
-.Ltmp212:
+	callq	__kmpc_for_static_init_4
+	movl	192(%rsp), %ecx
+	movl	188(%rsp), %eax
+	cmpl	%eax, %ecx
+	ja	.LBB4_9
+.Ltmp223:
+	vmovupd	(%rsi), %ymm0
+	subl	%ecx, %eax
+	leal	1(%rax), %ecx
+	cmpl	$8, %ecx
+	jae	.LBB4_3
+.Ltmp224:
+	vmovupd	144(%rsp), %ymm2
+	vmovupd	112(%rsp), %ymm3
+	vmovupd	80(%rsp), %ymm4
+	jmp	.LBB4_5
+.Ltmp225:
+.LBB4_3:
+	movl	%ecx, %edx
+	shrl	$3, %edx
+	vmovupd	144(%rsp), %ymm2
+	vmovupd	112(%rsp), %ymm3
+	vmovupd	80(%rsp), %ymm4
+.Ltmp226:
+	.p2align	4, 0x90
+.LBB4_4:
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 24 0
+	vfmadd213pd	%ymm4, %ymm2, %ymm0
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vmovapd	%ymm0, %ymm1
+	vfmadd213pd	%ymm3, %ymm2, %ymm1
+	.cv_loc	39 1 24 0
+	vmovapd	%ymm2, %ymm0
+	vfmadd213pd	%ymm4, %ymm1, %ymm0
+	.cv_loc	39 1 25 0
+	decl	%edx
+	jne	.LBB4_4
+.Ltmp227:
+.LBB4_5:
+	movl	%ecx, %edx
+	andl	$-8, %edx
+	cmpl	%ecx, %edx
+	je	.LBB4_8
+.Ltmp228:
+	subl	%edx, %eax
+	incl	%eax
+.Ltmp229:
+	.p2align	4, 0x90
+.LBB4_7:
+	.cv_loc	39 1 21 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 22 0
+	vfmadd213pd	%ymm3, %ymm2, %ymm0
+	.cv_loc	39 1 23 0
+	vmovapd	%ymm0, %ymm1
+	vfmadd213pd	%ymm3, %ymm2, %ymm1
+	.cv_loc	39 1 24 0
+	vmovapd	%ymm2, %ymm0
+	vfmadd213pd	%ymm4, %ymm1, %ymm0
+	.cv_loc	39 1 25 0
+	decl	%eax
+	jne	.LBB4_7
+.Ltmp230:
+.LBB4_8:
+	.cv_loc	39 1 23 0
+	vmovupd	%ymm0, (%rsi)
+	vmovupd	%ymm1, (%rbx)
+.Ltmp231:
+.LBB4_9:
+	.cv_loc	39 1 19 0
+	leaq	.L.kmpc_loc.19.19.2(%rip), %rsi
+	movq	200(%rsp), %rcx
+	xorq	%rsp, %rcx
+	vzeroupper
+	callq	__security_check_cookie
+	movq	%rsi, %rcx
+	movl	%edi, %edx
+	addq	$208, %rsp
+	popq	%rbx
+.Ltmp232:
+	popq	%rdi
+	popq	%rsi
+	jmp	__kmpc_for_static_fini
+.Ltmp233:
 .Lfunc_end4:
+	.seh_endproc
+
+	.data
+	.globl	"?ITERATIONS@@3JA"
+	.p2align	2, 0x0
+"?ITERATIONS@@3JA":
+	.long	500000000
 
 	.section	.rdata,"dr",discard,"??_C@_06ELNAEDJO@Time?3?5?$AA@"
 	.globl	"??_C@_06ELNAEDJO@Time?3?5?$AA@"
@@ -1403,6 +1568,21 @@ main.extracted:
 	.globl	"??_C@_0P@KCFGMNPP@?5milliseconds?$DL?$AA@"
 "??_C@_0P@KCFGMNPP@?5milliseconds?$DL?$AA@":
 	.asciz	" milliseconds;"
+
+	.section	.rdata,"dr",discard,"??_C@_0O@KOPJABAP@Performance?3?5?$AA@"
+	.globl	"??_C@_0O@KOPJABAP@Performance?3?5?$AA@"
+"??_C@_0O@KOPJABAP@Performance?3?5?$AA@":
+	.asciz	"Performance: "
+
+	.section	.rdata,"dr",discard,"??_C@_07JIFIDNEC@?5GFLOPS?$AA@"
+	.globl	"??_C@_07JIFIDNEC@?5GFLOPS?$AA@"
+"??_C@_07JIFIDNEC@?5GFLOPS?$AA@":
+	.asciz	" GFLOPS"
+
+	.section	.rdata,"dr",discard,"??_C@_05PDJBBECF@pause?$AA@"
+	.globl	"??_C@_05PDJBBECF@pause?$AA@"
+"??_C@_05PDJBBECF@pause?$AA@":
+	.asciz	"pause"
 
 	.section	.rdata,"dr"
 	.p2align	4, 0x0
@@ -1418,19 +1598,41 @@ main.extracted:
 	.long	0
 	.quad	.L.source.0.0
 
+	.p2align	4, 0x0
+.L.kmpc_loc.19.19:
+	.long	0
+	.long	838861314
+	.long	0
+	.long	0
+	.quad	.L.source.19.19.1
+
 	.section	.rdata,"dr"
 	.p2align	4, 0x0
-.L.source.17.17:
-	.ascii	";C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark/IntrinsicsBenchmark.cpp;main.extracted;17;17;;"
+.L.source.19.19.1:
+	.ascii	";C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark/IntrinsicsBenchmark.cpp;main;19;19;;"
 
 	.data
 	.p2align	4, 0x0
-.L.kmpc_loc.17.17:
+.L.kmpc_loc.19.19.2:
+	.long	0
+	.long	838861314
+	.long	0
+	.long	0
+	.quad	.L.source.19.19.1
+
+	.section	.rdata,"dr"
+	.p2align	4, 0x0
+.L.source.19.19.3:
+	.ascii	";C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark/IntrinsicsBenchmark.cpp;main.extracted;19;19;;"
+
+	.data
+	.p2align	4, 0x0
+.L.kmpc_loc.19.19.4:
 	.long	0
 	.long	838860802
 	.long	0
 	.long	0
-	.quad	.L.source.17.17
+	.quad	.L.source.19.19.3
 
 	.section	.drectve,"yni"
 	.ascii	" /DEFAULTLIB:msvcprtd.lib"
@@ -1451,17 +1653,17 @@ main.extracted:
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp214-.Ltmp213
-.Ltmp213:
-	.short	.Ltmp216-.Ltmp215
-.Ltmp215:
+	.long	.Ltmp235-.Ltmp234
+.Ltmp234:
+	.short	.Ltmp237-.Ltmp236
+.Ltmp236:
 	.short	4353
 	.long	0
 	.asciz	"C:\\Users\\\320\230\320\262\320\260\320\275\\Desktop\\IntrinsicsBenchmark\\IntrinsicsBenchmark\\IntrinsicsBenchmark.asm"
 	.p2align	2, 0x0
-.Ltmp216:
-	.short	.Ltmp218-.Ltmp217
-.Ltmp217:
+.Ltmp237:
+	.short	.Ltmp239-.Ltmp238
+.Ltmp238:
 	.short	4412
 	.long	1
 	.short	208
@@ -1475,12 +1677,12 @@ main.extracted:
 	.short	0
 	.asciz	"clang based Intel(R) oneAPI DPC++/C++ Compiler 2024.2.1 (2024.2.1.20240711)"
 	.p2align	2, 0x0
-.Ltmp218:
-.Ltmp214:
+.Ltmp239:
+.Ltmp235:
 	.p2align	2, 0x0
 	.long	246
-	.long	.Ltmp220-.Ltmp219
-.Ltmp219:
+	.long	.Ltmp241-.Ltmp240
+.Ltmp240:
 	.long	0
 
 
@@ -1582,16 +1784,16 @@ main.extracted:
 	.long	5091
 	.cv_filechecksumoffset	5
 	.long	188
-.Ltmp220:
+.Ltmp241:
 	.p2align	2, 0x0
 	.section	.debug$S,"dr",associative,main
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp222-.Ltmp221
-.Ltmp221:
-	.short	.Ltmp224-.Ltmp223
-.Ltmp223:
+	.long	.Ltmp243-.Ltmp242
+.Ltmp242:
+	.short	.Ltmp245-.Ltmp244
+.Ltmp244:
 	.short	4423
 	.long	0
 	.long	0
@@ -1605,11 +1807,11 @@ main.extracted:
 	.byte	129
 	.asciz	"main"
 	.p2align	2, 0x0
-.Ltmp224:
-	.short	.Ltmp226-.Ltmp225
-.Ltmp225:
+.Ltmp245:
+	.short	.Ltmp247-.Ltmp246
+.Ltmp246:
 	.short	4114
-	.long	320
+	.long	352
 	.long	0
 	.long	0
 	.long	56
@@ -1617,9 +1819,9 @@ main.extracted:
 	.short	0
 	.long	1200384
 	.p2align	2, 0x0
-.Ltmp226:
-	.short	.Ltmp228-.Ltmp227
-.Ltmp227:
+.Ltmp247:
+	.short	.Ltmp249-.Ltmp248
+.Ltmp248:
 	.short	4456
 	.long	4
 	.long	4147
@@ -1627,415 +1829,467 @@ main.extracted:
 	.long	4164
 	.long	4192
 	.p2align	2, 0x0
-.Ltmp228:
-	.short	.Ltmp230-.Ltmp229
-.Ltmp229:
+.Ltmp249:
+	.short	.Ltmp251-.Ltmp250
+.Ltmp250:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x1"
 	.p2align	2, 0x0
-.Ltmp230:
+.Ltmp251:
 	.cv_def_range	 .Ltmp1 .Ltmp2, reg, 368
-	.cv_def_range	 .Ltmp12 .Ltmp17 .Ltmp22 .Ltmp35, frame_ptr_rel, 192
-	.cv_def_range	 .Ltmp17 .Ltmp22 .Ltmp49 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp78 .Lfunc_end0, reg_rel, 329, 0, 192
-	.short	.Ltmp232-.Ltmp231
-.Ltmp231:
+	.cv_def_range	 .Ltmp14 .Ltmp15, frame_ptr_rel, 224
+	.short	.Ltmp253-.Ltmp252
+.Ltmp252:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x2"
 	.p2align	2, 0x0
-.Ltmp232:
+.Ltmp253:
 	.cv_def_range	 .Ltmp2 .Ltmp3, reg, 368
-	.cv_def_range	 .Ltmp12 .Ltmp17 .Ltmp22 .Ltmp35, frame_ptr_rel, 160
-	.cv_def_range	 .Ltmp17 .Ltmp22 .Ltmp49 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp78 .Lfunc_end0, reg_rel, 329, 0, 160
-	.short	.Ltmp234-.Ltmp233
-.Ltmp233:
+	.cv_def_range	 .Ltmp14 .Ltmp15, frame_ptr_rel, 192
+	.short	.Ltmp255-.Ltmp254
+.Ltmp254:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x3"
 	.p2align	2, 0x0
-.Ltmp234:
+.Ltmp255:
 	.cv_def_range	 .Ltmp3 .Ltmp5, reg, 154
-	.cv_def_range	 .Ltmp12 .Ltmp17 .Ltmp22 .Ltmp35, frame_ptr_rel, 128
-	.cv_def_range	 .Ltmp17 .Ltmp22 .Ltmp49 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp78 .Lfunc_end0, reg_rel, 329, 0, 128
-	.short	.Ltmp236-.Ltmp235
-.Ltmp235:
+	.cv_def_range	 .Ltmp14 .Ltmp15, frame_ptr_rel, 160
+	.short	.Ltmp257-.Ltmp256
+.Ltmp256:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x4"
 	.p2align	2, 0x0
-.Ltmp236:
+.Ltmp257:
 	.cv_def_range	 .Ltmp4 .Ltmp5, reg, 154
-	.cv_def_range	 .Ltmp12 .Ltmp17 .Ltmp22 .Ltmp35, frame_ptr_rel, 96
-	.cv_def_range	 .Ltmp17 .Ltmp22 .Ltmp49 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp78 .Lfunc_end0, reg_rel, 329, 0, 96
-	.short	.Ltmp238-.Ltmp237
-.Ltmp237:
+	.cv_def_range	 .Ltmp14 .Ltmp15, frame_ptr_rel, 128
+	.short	.Ltmp259-.Ltmp258
+.Ltmp258:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x5"
 	.p2align	2, 0x0
-.Ltmp238:
+.Ltmp259:
 	.cv_def_range	 .Ltmp5 .Ltmp7, reg, 368
-	.cv_def_range	 .Ltmp12 .Ltmp17 .Ltmp22 .Ltmp35, frame_ptr_rel, 64
-	.cv_def_range	 .Ltmp17 .Ltmp22 .Ltmp49 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp78 .Lfunc_end0, reg_rel, 329, 0, 64
-	.short	.Ltmp240-.Ltmp239
-.Ltmp239:
+	.cv_def_range	 .Ltmp14 .Ltmp15, frame_ptr_rel, 96
+	.short	.Ltmp261-.Ltmp260
+.Ltmp260:
 	.short	4414
 	.long	4121
 	.short	0
 	.asciz	"start"
 	.p2align	2, 0x0
-.Ltmp240:
-	.cv_def_range	 .Ltmp11 .Ltmp21 .Ltmp48 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp75 .Ltmp77 .Lfunc_end0, reg, 332
-	.short	.Ltmp242-.Ltmp241
-.Ltmp241:
+.Ltmp261:
+	.cv_def_range	 .Ltmp11 .Ltmp23 .Ltmp53 .Ltmp64 .Ltmp67 .Ltmp70 .Ltmp75 .Ltmp80 .Ltmp82 .Lfunc_end0, reg, 332
+	.short	.Ltmp263-.Ltmp262
+.Ltmp262:
 	.short	4414
 	.long	4121
 	.short	0
 	.asciz	"stop"
 	.p2align	2, 0x0
-.Ltmp242:
-	.cv_def_range	 .Ltmp18 .Ltmp19 .Ltmp58 .Ltmp59 .Ltmp80 .Lfunc_end0, reg, 333
-	.short	.Ltmp244-.Ltmp243
-.Ltmp243:
+.Ltmp263:
+	.cv_def_range	 .Ltmp20 .Ltmp21 .Ltmp63 .Ltmp64 .Ltmp85 .Lfunc_end0, reg, 333
+	.short	.Ltmp265-.Ltmp264
+.Ltmp264:
 	.short	4414
 	.long	5094
 	.short	256
 	.asciz	"a"
 	.p2align	2, 0x0
-.Ltmp244:
-	.short	.Ltmp246-.Ltmp245
-.Ltmp245:
+.Ltmp265:
+	.short	.Ltmp267-.Ltmp266
+.Ltmp266:
 	.short	4414
 	.long	4187
 	.short	0
 	.asciz	"res"
 	.p2align	2, 0x0
-.Ltmp246:
-	.cv_def_range	 .Ltmp32 .Ltmp37, reg, 333
-	.short	.Ltmp248-.Ltmp247
-.Ltmp247:
+.Ltmp267:
+	.cv_def_range	 .Ltmp34 .Ltmp41, reg, 333
+	.short	.Ltmp269-.Ltmp268
+.Ltmp268:
+	.short	4414
+	.long	18
+	.short	0
+	.asciz	"cbp"
+	.p2align	2, 0x0
+.Ltmp269:
+	.cv_def_range	 .Ltmp35 .Ltmp43, reg, 365
+	.short	.Ltmp271-.Ltmp270
+.Ltmp270:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4147
 	.cv_inline_linetable	1 2 678 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp248:
-	.short	.Ltmp250-.Ltmp249
-.Ltmp249:
+.Ltmp271:
+	.short	.Ltmp273-.Ltmp272
+.Ltmp272:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Freq"
 	.p2align	2, 0x0
-.Ltmp250:
-	.cv_def_range	 .Ltmp8 .Ltmp11 .Ltmp39 .Ltmp45 .Ltmp59 .Ltmp62 .Ltmp65 .Ltmp69 .Ltmp75 .Ltmp76, reg, 332
-	.short	.Ltmp252-.Ltmp251
-.Ltmp251:
+.Ltmp273:
+	.cv_def_range	 .Ltmp8 .Ltmp11 .Ltmp44 .Ltmp50 .Ltmp64 .Ltmp67 .Ltmp70 .Ltmp74 .Ltmp80 .Ltmp81, reg, 332
+	.short	.Ltmp275-.Ltmp274
+.Ltmp274:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Ctr"
 	.p2align	2, 0x0
-.Ltmp252:
-	.cv_def_range	 .Ltmp9 .Ltmp11 .Ltmp39 .Ltmp42 .Ltmp59 .Ltmp61 .Ltmp65 .Ltmp66, reg, 328
-	.cv_def_range	 .Ltmp42 .Ltmp44, reg, 330
-	.short	.Ltmp254-.Ltmp253
-.Ltmp253:
+.Ltmp275:
+	.cv_def_range	 .Ltmp9 .Ltmp11 .Ltmp44 .Ltmp47 .Ltmp64 .Ltmp66 .Ltmp70 .Ltmp71, reg, 328
+	.cv_def_range	 .Ltmp47 .Ltmp49, reg, 330
+	.short	.Ltmp277-.Ltmp276
+.Ltmp276:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x80, 0x96
 	.byte	0x98, 0x00
 	.asciz	"_TenMHz"
 	.p2align	2, 0x0
-.Ltmp254:
-	.short	.Ltmp256-.Ltmp255
-.Ltmp255:
+.Ltmp277:
+	.short	.Ltmp279-.Ltmp278
+.Ltmp278:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x00, 0x36
 	.byte	0x6e, 0x01
 	.asciz	"_TwentyFourMHz"
 	.p2align	2, 0x0
-.Ltmp256:
-	.short	.Ltmp258-.Ltmp257
-.Ltmp257:
+.Ltmp279:
+	.short	.Ltmp281-.Ltmp280
+.Ltmp280:
 	.short	4359
 	.long	4123
 	.byte	0x64, 0x00
 	.asciz	"_Multiplier"
 	.p2align	2, 0x0
-.Ltmp258:
-	.short	.Ltmp260-.Ltmp259
-.Ltmp259:
+.Ltmp281:
+	.short	.Ltmp283-.Ltmp282
+.Ltmp282:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Whole"
 	.p2align	2, 0x0
-.Ltmp260:
-	.cv_def_range	 .Ltmp46 .Ltmp49, reg, 328
-	.short	.Ltmp262-.Ltmp261
-.Ltmp261:
+.Ltmp283:
+	.cv_def_range	 .Ltmp51 .Ltmp54, reg, 328
+	.short	.Ltmp285-.Ltmp284
+.Ltmp284:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Part"
 	.p2align	2, 0x0
-.Ltmp262:
-	.cv_def_range	 .Ltmp47 .Ltmp48, reg, 332
-	.short	.Ltmp264-.Ltmp263
-.Ltmp263:
+.Ltmp285:
+	.cv_def_range	 .Ltmp52 .Ltmp53, reg, 332
+	.short	.Ltmp287-.Ltmp286
+.Ltmp286:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Whole"
 	.p2align	2, 0x0
-.Ltmp264:
-	.cv_def_range	 .Ltmp67 .Ltmp70 .Ltmp75 .Ltmp78, reg, 330
-	.short	.Ltmp266-.Ltmp265
-.Ltmp265:
+.Ltmp287:
+	.cv_def_range	 .Ltmp72 .Ltmp75 .Ltmp80 .Ltmp83, reg, 330
+	.short	.Ltmp289-.Ltmp288
+.Ltmp288:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Part"
 	.p2align	2, 0x0
-.Ltmp266:
-	.cv_def_range	 .Ltmp76 .Ltmp77, reg, 332
+.Ltmp289:
+	.cv_def_range	 .Ltmp81 .Ltmp82, reg, 332
 	.short	2
 	.short	4430
-	.short	.Ltmp268-.Ltmp267
-.Ltmp267:
+	.short	.Ltmp291-.Ltmp290
+.Ltmp290:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4147
 	.cv_inline_linetable	2 2 678 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp268:
-	.short	.Ltmp270-.Ltmp269
-.Ltmp269:
+.Ltmp291:
+	.short	.Ltmp293-.Ltmp292
+.Ltmp292:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Freq"
 	.p2align	2, 0x0
-.Ltmp270:
-	.cv_def_range	 .Ltmp15 .Ltmp18 .Ltmp49 .Ltmp55 .Ltmp62 .Ltmp65 .Ltmp70 .Ltmp74 .Ltmp78 .Ltmp79, reg, 333
-	.short	.Ltmp272-.Ltmp271
-.Ltmp271:
+.Ltmp293:
+	.cv_def_range	 .Ltmp17 .Ltmp20 .Ltmp54 .Ltmp60 .Ltmp67 .Ltmp70 .Ltmp75 .Ltmp79 .Ltmp83 .Ltmp84, reg, 333
+	.short	.Ltmp295-.Ltmp294
+.Ltmp294:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Ctr"
 	.p2align	2, 0x0
-.Ltmp272:
-	.cv_def_range	 .Ltmp16 .Ltmp18 .Ltmp49 .Ltmp52 .Ltmp62 .Ltmp64 .Ltmp70 .Ltmp71, reg, 328
-	.cv_def_range	 .Ltmp52 .Ltmp54, reg, 330
-	.short	.Ltmp274-.Ltmp273
-.Ltmp273:
+.Ltmp295:
+	.cv_def_range	 .Ltmp18 .Ltmp20 .Ltmp54 .Ltmp57 .Ltmp67 .Ltmp69 .Ltmp75 .Ltmp76, reg, 328
+	.cv_def_range	 .Ltmp57 .Ltmp59, reg, 330
+	.short	.Ltmp297-.Ltmp296
+.Ltmp296:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x80, 0x96
 	.byte	0x98, 0x00
 	.asciz	"_TenMHz"
 	.p2align	2, 0x0
-.Ltmp274:
-	.short	.Ltmp276-.Ltmp275
-.Ltmp275:
+.Ltmp297:
+	.short	.Ltmp299-.Ltmp298
+.Ltmp298:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x00, 0x36
 	.byte	0x6e, 0x01
 	.asciz	"_TwentyFourMHz"
 	.p2align	2, 0x0
-.Ltmp276:
-	.short	.Ltmp278-.Ltmp277
-.Ltmp277:
+.Ltmp299:
+	.short	.Ltmp301-.Ltmp300
+.Ltmp300:
 	.short	4359
 	.long	4123
 	.byte	0x64, 0x00
 	.asciz	"_Multiplier"
 	.p2align	2, 0x0
-.Ltmp278:
-	.short	.Ltmp280-.Ltmp279
-.Ltmp279:
+.Ltmp301:
+	.short	.Ltmp303-.Ltmp302
+.Ltmp302:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Whole"
 	.p2align	2, 0x0
-.Ltmp280:
-	.cv_def_range	 .Ltmp56 .Ltmp59, reg, 328
-	.short	.Ltmp282-.Ltmp281
-.Ltmp281:
+.Ltmp303:
+	.cv_def_range	 .Ltmp61 .Ltmp64, reg, 328
+	.short	.Ltmp305-.Ltmp304
+.Ltmp304:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Part"
 	.p2align	2, 0x0
-.Ltmp282:
-	.cv_def_range	 .Ltmp57 .Ltmp58, reg, 333
-	.short	.Ltmp284-.Ltmp283
-.Ltmp283:
+.Ltmp305:
+	.cv_def_range	 .Ltmp62 .Ltmp63, reg, 333
+	.short	.Ltmp307-.Ltmp306
+.Ltmp306:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Whole"
 	.p2align	2, 0x0
-.Ltmp284:
-	.cv_def_range	 .Ltmp72 .Ltmp75 .Ltmp78 .Lfunc_end0, reg, 330
-	.short	.Ltmp286-.Ltmp285
-.Ltmp285:
+.Ltmp307:
+	.cv_def_range	 .Ltmp77 .Ltmp80 .Ltmp83 .Lfunc_end0, reg, 330
+	.short	.Ltmp309-.Ltmp308
+.Ltmp308:
 	.short	4414
 	.long	4123
 	.short	0
 	.asciz	"_Part"
 	.p2align	2, 0x0
-.Ltmp286:
-	.cv_def_range	 .Ltmp79 .Ltmp80, reg, 333
+.Ltmp309:
+	.cv_def_range	 .Ltmp84 .Ltmp85, reg, 333
 	.short	2
 	.short	4430
-	.short	.Ltmp288-.Ltmp287
-.Ltmp287:
+	.short	.Ltmp311-.Ltmp310
+.Ltmp310:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4152
 	.cv_inline_linetable	3 2 547 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp288:
-	.short	.Ltmp290-.Ltmp289
-.Ltmp289:
+.Ltmp311:
+	.short	.Ltmp313-.Ltmp312
+.Ltmp312:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4155
 	.cv_inline_linetable	4 2 288 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp290:
+.Ltmp313:
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
-	.short	.Ltmp292-.Ltmp291
-.Ltmp291:
+	.short	.Ltmp315-.Ltmp314
+.Ltmp314:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4164
 	.cv_inline_linetable	5 3 189 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp292:
-	.short	.Ltmp294-.Ltmp293
-.Ltmp293:
+.Ltmp315:
+	.short	.Ltmp317-.Ltmp316
+.Ltmp316:
 	.short	4414
 	.long	5075
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp294:
-	.cv_def_range	 .Ltmp22 .Ltmp36, reg, 329
-	.short	.Ltmp296-.Ltmp295
-.Ltmp295:
+.Ltmp317:
+	.cv_def_range	 .Ltmp24 .Ltmp36, reg, 329
+	.short	.Ltmp319-.Ltmp318
+.Ltmp318:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4166
 	.cv_inline_linetable	6 3 1009 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp296:
-	.short	.Ltmp298-.Ltmp297
-.Ltmp297:
+.Ltmp319:
+	.short	.Ltmp321-.Ltmp320
+.Ltmp320:
 	.short	4414
 	.long	4157
 	.short	1
 	.asciz	"_Ostr"
 	.p2align	2, 0x0
-.Ltmp298:
-	.cv_def_range	 .Ltmp22 .Ltmp36, reg, 329
+.Ltmp321:
+	.cv_def_range	 .Ltmp24 .Ltmp36, reg, 329
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
-	.short	.Ltmp300-.Ltmp299
-.Ltmp299:
+	.short	.Ltmp323-.Ltmp322
+.Ltmp322:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4192
 	.cv_inline_linetable	7 2 420 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp300:
+.Ltmp323:
 	.short	2
 	.short	4430
-	.short	.Ltmp302-.Ltmp301
-.Ltmp301:
+	.short	.Ltmp325-.Ltmp324
+.Ltmp324:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4164
 	.cv_inline_linetable	8 3 189 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp302:
-	.short	.Ltmp304-.Ltmp303
-.Ltmp303:
+.Ltmp325:
+	.short	.Ltmp327-.Ltmp326
+.Ltmp326:
 	.short	4414
 	.long	5075
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp304:
-	.cv_def_range	 .Ltmp33 .Ltmp38, reg, 332
-	.short	.Ltmp306-.Ltmp305
-.Ltmp305:
+.Ltmp327:
+	.cv_def_range	 .Ltmp36 .Ltmp40, reg, 329
+	.short	.Ltmp329-.Ltmp328
+.Ltmp328:
 	.short	4414
 	.long	4161
 	.short	257
 	.asciz	"_Pfn"
 	.p2align	2, 0x0
-.Ltmp306:
-	.short	.Ltmp308-.Ltmp307
-.Ltmp307:
+.Ltmp329:
+	.short	.Ltmp331-.Ltmp330
+.Ltmp330:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4166
 	.cv_inline_linetable	9 3 1009 .Lfunc_begin0 .Lfunc_end0
 	.p2align	2, 0x0
-.Ltmp308:
-	.short	.Ltmp310-.Ltmp309
-.Ltmp309:
+.Ltmp331:
+	.short	.Ltmp333-.Ltmp332
+.Ltmp332:
 	.short	4414
 	.long	4157
 	.short	1
 	.asciz	"_Ostr"
 	.p2align	2, 0x0
-.Ltmp310:
-	.cv_def_range	 .Ltmp33 .Ltmp38, reg, 332
+.Ltmp333:
+	.cv_def_range	 .Ltmp36 .Ltmp40, reg, 329
+	.short	2
+	.short	4430
+	.short	2
+	.short	4430
+	.short	.Ltmp335-.Ltmp334
+.Ltmp334:
+	.short	4429
+	.long	0
+	.long	0
+	.long	4164
+	.cv_inline_linetable	10 3 189 .Lfunc_begin0 .Lfunc_end0
+	.p2align	2, 0x0
+.Ltmp335:
+	.short	.Ltmp337-.Ltmp336
+.Ltmp336:
+	.short	4414
+	.long	5075
+	.short	1
+	.asciz	"this"
+	.p2align	2, 0x0
+.Ltmp337:
+	.cv_def_range	 .Ltmp38 .Ltmp42, reg, 332
+	.short	.Ltmp339-.Ltmp338
+.Ltmp338:
+	.short	4414
+	.long	4161
+	.short	257
+	.asciz	"_Pfn"
+	.p2align	2, 0x0
+.Ltmp339:
+	.short	.Ltmp341-.Ltmp340
+.Ltmp340:
+	.short	4429
+	.long	0
+	.long	0
+	.long	4166
+	.cv_inline_linetable	11 3 1009 .Lfunc_begin0 .Lfunc_end0
+	.p2align	2, 0x0
+.Ltmp341:
+	.short	.Ltmp343-.Ltmp342
+.Ltmp342:
+	.short	4414
+	.long	4157
+	.short	1
+	.asciz	"_Ostr"
+	.p2align	2, 0x0
+.Ltmp343:
+	.cv_def_range	 .Ltmp38 .Ltmp42, reg, 332
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
 	.short	2
 	.short	4431
-.Ltmp222:
+.Ltmp243:
 	.p2align	2, 0x0
 	.cv_linetable	0, main, .Lfunc_end0
 	.section	.debug$S,"dr",associative,"??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z"
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp312-.Ltmp311
-.Ltmp311:
-	.short	.Ltmp314-.Ltmp313
-.Ltmp313:
+	.long	.Ltmp345-.Ltmp344
+.Ltmp344:
+	.short	.Ltmp347-.Ltmp346
+.Ltmp346:
 	.short	4423
 	.long	0
 	.long	0
@@ -2049,9 +2303,9 @@ main.extracted:
 	.byte	129
 	.asciz	"std::operator<<<std::char_traits<char> >"
 	.p2align	2, 0x0
-.Ltmp314:
-	.short	.Ltmp316-.Ltmp315
-.Ltmp315:
+.Ltmp347:
+	.short	.Ltmp349-.Ltmp348
+.Ltmp348:
 	.short	4114
 	.long	80
 	.long	0
@@ -2061,9 +2315,9 @@ main.extracted:
 	.short	0
 	.long	1212432
 	.p2align	2, 0x0
-.Ltmp316:
-	.short	.Ltmp318-.Ltmp317
-.Ltmp317:
+.Ltmp349:
+	.short	.Ltmp351-.Ltmp350
+.Ltmp350:
 	.short	4456
 	.long	10
 	.long	4256
@@ -2077,619 +2331,619 @@ main.extracted:
 	.long	5088
 	.long	5089
 	.p2align	2, 0x0
-.Ltmp318:
-	.short	.Ltmp320-.Ltmp319
-.Ltmp319:
+.Ltmp351:
+	.short	.Ltmp353-.Ltmp352
+.Ltmp352:
 	.short	4414
 	.long	4157
 	.short	1
 	.asciz	"_Ostr"
 	.p2align	2, 0x0
-.Ltmp320:
-	.cv_def_range	 .Lfunc_begin1 .Ltmp97, reg, 330
-	.cv_def_range	 .Ltmp97 .Ltmp108, reg, 343
-	.cv_def_range	 .Ltmp108 .Ltmp166 .Ltmp171 .Ltmp172 .Ltmp176 .Ltmp180 .Ltmp181 .Ltmp182, frame_ptr_rel, -8
-	.short	.Ltmp322-.Ltmp321
-.Ltmp321:
+.Ltmp353:
+	.cv_def_range	 .Lfunc_begin1 .Ltmp102, reg, 330
+	.cv_def_range	 .Ltmp102 .Ltmp113, reg, 343
+	.cv_def_range	 .Ltmp113 .Ltmp171 .Ltmp176 .Ltmp177 .Ltmp181 .Ltmp185 .Ltmp186 .Ltmp187, frame_ptr_rel, -8
+	.short	.Ltmp355-.Ltmp354
+.Ltmp354:
 	.short	4414
 	.long	4202
 	.short	1
 	.asciz	"_Val"
 	.p2align	2, 0x0
-.Ltmp322:
-	.cv_def_range	 .Lfunc_begin1 .Ltmp98, reg, 331
-	.cv_def_range	 .Ltmp98 .Ltmp152 .Ltmp165 .Ltmp169 .Ltmp171 .Ltmp177, reg, 333
-	.short	.Ltmp324-.Ltmp323
-.Ltmp323:
+.Ltmp355:
+	.cv_def_range	 .Lfunc_begin1 .Ltmp103, reg, 331
+	.cv_def_range	 .Ltmp103 .Ltmp157 .Ltmp170 .Ltmp174 .Ltmp176 .Ltmp182, reg, 333
+	.short	.Ltmp357-.Ltmp356
+.Ltmp356:
 	.short	4414
 	.long	5041
 	.short	0
 	.asciz	"_Ok"
 	.p2align	2, 0x0
-.Ltmp324:
-	.cv_def_range	 .Ltmp96 .Ltmp183, frame_ptr_rel, -32
-	.short	.Ltmp326-.Ltmp325
-.Ltmp325:
+.Ltmp357:
+	.cv_def_range	 .Ltmp101 .Ltmp188, frame_ptr_rel, -32
+	.short	.Ltmp359-.Ltmp358
+.Ltmp358:
 	.short	4359
 	.long	116
 	.byte	0x00, 0x00
 	.asciz	"_State"
 	.p2align	2, 0x0
-.Ltmp326:
-	.short	.Ltmp328-.Ltmp327
-.Ltmp327:
+.Ltmp359:
+	.short	.Ltmp361-.Ltmp360
+.Ltmp360:
 	.short	4414
 	.long	19
 	.short	0
 	.asciz	"_Count"
 	.p2align	2, 0x0
-.Ltmp328:
-	.cv_def_range	 .Ltmp99 .Ltmp139 .Ltmp165 .Ltmp170, reg, 332
-	.short	.Ltmp330-.Ltmp329
-.Ltmp329:
+.Ltmp361:
+	.cv_def_range	 .Ltmp104 .Ltmp144 .Ltmp170 .Ltmp175, reg, 332
+	.short	.Ltmp363-.Ltmp362
+.Ltmp362:
 	.short	4414
 	.long	19
 	.short	0
 	.asciz	"_Pad"
 	.p2align	2, 0x0
-.Ltmp330:
-	.cv_def_range	 .Ltmp102 .Ltmp123 .Ltmp133 .Ltmp145 .Ltmp146 .Ltmp148 .Ltmp165 .Ltmp168, reg, 329
-	.cv_def_range	 .Ltmp123 .Ltmp130 .Ltmp131 .Ltmp133, reg, 342
-	.cv_def_range	 .Ltmp130 .Ltmp131 .Ltmp145 .Ltmp146, reg, 328
-	.short	.Ltmp332-.Ltmp331
-.Ltmp331:
+.Ltmp363:
+	.cv_def_range	 .Ltmp107 .Ltmp128 .Ltmp138 .Ltmp150 .Ltmp151 .Ltmp153 .Ltmp170 .Ltmp173, reg, 329
+	.cv_def_range	 .Ltmp128 .Ltmp135 .Ltmp136 .Ltmp138, reg, 342
+	.cv_def_range	 .Ltmp135 .Ltmp136 .Ltmp150 .Ltmp151, reg, 328
+	.short	.Ltmp365-.Ltmp364
+.Ltmp364:
 	.short	4429
 	.long	0
 	.long	0
 	.long	4256
-	.cv_inline_linetable	11 4 385 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	13 4 385 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp332:
-	.short	.Ltmp334-.Ltmp333
-.Ltmp333:
+.Ltmp365:
+	.short	.Ltmp367-.Ltmp366
+.Ltmp366:
 	.short	4414
 	.long	4196
 	.short	1
 	.asciz	"_First"
 	.p2align	2, 0x0
-.Ltmp334:
-	.cv_def_range	 .Ltmp96 .Ltmp105, reg, 333
+.Ltmp367:
+	.cv_def_range	 .Ltmp101 .Ltmp110, reg, 333
 	.short	2
 	.short	4430
-	.short	.Ltmp336-.Ltmp335
-.Ltmp335:
+	.short	.Ltmp369-.Ltmp368
+.Ltmp368:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5036
-	.cv_inline_linetable	12 5 279 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	14 5 279 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp336:
-	.short	.Ltmp338-.Ltmp337
-.Ltmp337:
+.Ltmp369:
+	.short	.Ltmp371-.Ltmp370
+.Ltmp370:
 	.short	4414
 	.long	5098
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp338:
+.Ltmp371:
 	.short	2
 	.short	4430
-	.short	.Ltmp340-.Ltmp339
-.Ltmp339:
+	.short	.Ltmp373-.Ltmp372
+.Ltmp372:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5066
-	.cv_inline_linetable	13 3 96 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	15 3 96 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp340:
-	.short	.Ltmp342-.Ltmp341
-.Ltmp341:
+.Ltmp373:
+	.short	.Ltmp375-.Ltmp374
+.Ltmp374:
 	.short	4414
 	.long	5099
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp342:
-	.short	.Ltmp344-.Ltmp343
-.Ltmp343:
+.Ltmp375:
+	.short	.Ltmp377-.Ltmp376
+.Ltmp376:
 	.short	4414
 	.long	4157
 	.short	1
 	.asciz	"_Ostr"
 	.p2align	2, 0x0
-.Ltmp344:
-	.cv_def_range	 .Ltmp102 .Ltmp108, reg, 343
-	.cv_def_range	 .Ltmp108 .Ltmp116 .Ltmp118 .Ltmp120, frame_ptr_rel, -8
-	.short	.Ltmp346-.Ltmp345
-.Ltmp345:
+.Ltmp377:
+	.cv_def_range	 .Ltmp107 .Ltmp113, reg, 343
+	.cv_def_range	 .Ltmp113 .Ltmp121 .Ltmp123 .Ltmp125, frame_ptr_rel, -8
+	.short	.Ltmp379-.Ltmp378
+.Ltmp378:
 	.short	4414
 	.long	4158
 	.short	0
 	.asciz	"_Tied"
 	.p2align	2, 0x0
-.Ltmp346:
-	.cv_def_range	 .Ltmp111 .Ltmp114 .Ltmp119 .Ltmp120, reg, 330
-	.short	.Ltmp348-.Ltmp347
-.Ltmp347:
+.Ltmp379:
+	.cv_def_range	 .Ltmp116 .Ltmp119 .Ltmp124 .Ltmp125, reg, 330
+	.short	.Ltmp381-.Ltmp380
+.Ltmp380:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5067
-	.cv_inline_linetable	14 3 75 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	16 3 75 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp348:
-	.short	.Ltmp350-.Ltmp349
-.Ltmp349:
+.Ltmp381:
+	.short	.Ltmp383-.Ltmp382
+.Ltmp382:
 	.short	4414
 	.long	5100
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp350:
-	.short	.Ltmp352-.Ltmp351
-.Ltmp351:
+.Ltmp383:
+	.short	.Ltmp385-.Ltmp384
+.Ltmp384:
 	.short	4414
 	.long	4157
 	.short	1
 	.asciz	"_Ostr"
 	.p2align	2, 0x0
-.Ltmp352:
-	.cv_def_range	 .Ltmp102 .Ltmp107, reg, 343
-	.short	.Ltmp354-.Ltmp353
-.Ltmp353:
+.Ltmp385:
+	.cv_def_range	 .Ltmp107 .Ltmp112, reg, 343
+	.short	.Ltmp387-.Ltmp386
+.Ltmp386:
 	.short	4414
 	.long	5081
 	.short	0
 	.asciz	"_Rdbuf"
 	.p2align	2, 0x0
-.Ltmp354:
-	.cv_def_range	 .Ltmp104 .Ltmp106, reg, 328
-	.short	.Ltmp356-.Ltmp355
-.Ltmp355:
-	.short	4429
-	.long	0
-	.long	0
-	.long	5074
-	.cv_inline_linetable	15 6 77 .Lfunc_begin1 .Lfunc_end1
-	.p2align	2, 0x0
-.Ltmp356:
-	.short	.Ltmp358-.Ltmp357
-.Ltmp357:
-	.short	4414
-	.long	5101
-	.short	257
-	.asciz	"this"
-	.p2align	2, 0x0
-.Ltmp358:
-	.short	2
-	.short	4430
-	.short	2
-	.short	4430
-	.short	.Ltmp360-.Ltmp359
-.Ltmp359:
-	.short	4429
-	.long	0
-	.long	0
-	.long	5077
-	.cv_inline_linetable	16 6 67 .Lfunc_begin1 .Lfunc_end1
-	.p2align	2, 0x0
-.Ltmp360:
-	.short	.Ltmp362-.Ltmp361
-.Ltmp361:
-	.short	4414
-	.long	5101
-	.short	257
-	.asciz	"this"
-	.p2align	2, 0x0
-.Ltmp362:
-	.short	2
-	.short	4430
-	.short	2
-	.short	4430
-	.short	.Ltmp364-.Ltmp363
-.Ltmp363:
+.Ltmp387:
+	.cv_def_range	 .Ltmp109 .Ltmp111, reg, 328
+	.short	.Ltmp389-.Ltmp388
+.Ltmp388:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5074
 	.cv_inline_linetable	17 6 77 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp364:
-	.short	.Ltmp366-.Ltmp365
-.Ltmp365:
+.Ltmp389:
+	.short	.Ltmp391-.Ltmp390
+.Ltmp390:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp366:
+.Ltmp391:
 	.short	2
 	.short	4430
-	.short	.Ltmp368-.Ltmp367
-.Ltmp367:
+	.short	2
+	.short	4430
+	.short	.Ltmp393-.Ltmp392
+.Ltmp392:
+	.short	4429
+	.long	0
+	.long	0
+	.long	5077
+	.cv_inline_linetable	18 6 67 .Lfunc_begin1 .Lfunc_end1
+	.p2align	2, 0x0
+.Ltmp393:
+	.short	.Ltmp395-.Ltmp394
+.Ltmp394:
+	.short	4414
+	.long	5101
+	.short	257
+	.asciz	"this"
+	.p2align	2, 0x0
+.Ltmp395:
+	.short	2
+	.short	4430
+	.short	2
+	.short	4430
+	.short	.Ltmp397-.Ltmp396
+.Ltmp396:
+	.short	4429
+	.long	0
+	.long	0
+	.long	5074
+	.cv_inline_linetable	19 6 77 .Lfunc_begin1 .Lfunc_end1
+	.p2align	2, 0x0
+.Ltmp397:
+	.short	.Ltmp399-.Ltmp398
+.Ltmp398:
+	.short	4414
+	.long	5101
+	.short	257
+	.asciz	"this"
+	.p2align	2, 0x0
+.Ltmp399:
+	.short	2
+	.short	4430
+	.short	.Ltmp401-.Ltmp400
+.Ltmp400:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5079
-	.cv_inline_linetable	18 6 98 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	20 6 98 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp368:
-	.short	.Ltmp370-.Ltmp369
-.Ltmp369:
+.Ltmp401:
+	.short	.Ltmp403-.Ltmp402
+.Ltmp402:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp370:
+.Ltmp403:
 	.short	2
 	.short	4430
-	.short	.Ltmp372-.Ltmp371
-.Ltmp371:
+	.short	.Ltmp405-.Ltmp404
+.Ltmp404:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5080
-	.cv_inline_linetable	19 4 463 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	21 4 463 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp372:
-	.short	.Ltmp374-.Ltmp373
-.Ltmp373:
+.Ltmp405:
+	.short	.Ltmp407-.Ltmp406
+.Ltmp406:
 	.short	4414
 	.long	4215
 	.short	257
 	.asciz	"_Left"
 	.p2align	2, 0x0
-.Ltmp374:
-	.short	.Ltmp376-.Ltmp375
-.Ltmp375:
+.Ltmp407:
+	.short	.Ltmp409-.Ltmp408
+.Ltmp408:
 	.short	4414
 	.long	4215
 	.short	257
 	.asciz	"_Right"
 	.p2align	2, 0x0
-.Ltmp376:
+.Ltmp409:
 	.short	2
 	.short	4430
-	.short	.Ltmp378-.Ltmp377
-.Ltmp377:
-	.short	4429
-	.long	0
-	.long	0
-	.long	5074
-	.cv_inline_linetable	20 6 77 .Lfunc_begin1 .Lfunc_end1
-	.p2align	2, 0x0
-.Ltmp378:
-	.short	.Ltmp380-.Ltmp379
-.Ltmp379:
-	.short	4414
-	.long	5101
-	.short	257
-	.asciz	"this"
-	.p2align	2, 0x0
-.Ltmp380:
-	.short	2
-	.short	4430
-	.short	.Ltmp382-.Ltmp381
-.Ltmp381:
-	.short	4429
-	.long	0
-	.long	0
-	.long	5084
-	.cv_inline_linetable	21 7 169 .Lfunc_begin1 .Lfunc_end1
-	.p2align	2, 0x0
-.Ltmp382:
-	.short	.Ltmp384-.Ltmp383
-.Ltmp383:
-	.short	4414
-	.long	5070
-	.short	1
-	.asciz	"this"
-	.p2align	2, 0x0
-.Ltmp384:
-	.cv_def_range	 .Ltmp134 .Ltmp136, reg, 330
-	.short	.Ltmp386-.Ltmp385
-.Ltmp385:
-	.short	4414
-	.long	4202
-	.short	1
-	.asciz	"_Ptr"
-	.p2align	2, 0x0
-.Ltmp386:
-	.cv_def_range	 .Ltmp134 .Ltmp136, reg, 333
-	.short	.Ltmp388-.Ltmp387
-.Ltmp387:
-	.short	4414
-	.long	19
-	.short	1
-	.asciz	"_Count"
-	.p2align	2, 0x0
-.Ltmp388:
-	.cv_def_range	 .Ltmp134 .Ltmp136, reg, 332
-	.short	2
-	.short	4430
-	.short	.Ltmp390-.Ltmp389
-.Ltmp389:
+	.short	.Ltmp411-.Ltmp410
+.Ltmp410:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5074
 	.cv_inline_linetable	22 6 77 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp390:
-	.short	.Ltmp392-.Ltmp391
-.Ltmp391:
+.Ltmp411:
+	.short	.Ltmp413-.Ltmp412
+.Ltmp412:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp392:
+.Ltmp413:
 	.short	2
 	.short	4430
-	.short	.Ltmp394-.Ltmp393
-.Ltmp393:
+	.short	.Ltmp415-.Ltmp414
+.Ltmp414:
+	.short	4429
+	.long	0
+	.long	0
+	.long	5084
+	.cv_inline_linetable	23 7 169 .Lfunc_begin1 .Lfunc_end1
+	.p2align	2, 0x0
+.Ltmp415:
+	.short	.Ltmp417-.Ltmp416
+.Ltmp416:
+	.short	4414
+	.long	5070
+	.short	1
+	.asciz	"this"
+	.p2align	2, 0x0
+.Ltmp417:
+	.cv_def_range	 .Ltmp139 .Ltmp141, reg, 330
+	.short	.Ltmp419-.Ltmp418
+.Ltmp418:
+	.short	4414
+	.long	4202
+	.short	1
+	.asciz	"_Ptr"
+	.p2align	2, 0x0
+.Ltmp419:
+	.cv_def_range	 .Ltmp139 .Ltmp141, reg, 333
+	.short	.Ltmp421-.Ltmp420
+.Ltmp420:
+	.short	4414
+	.long	19
+	.short	1
+	.asciz	"_Count"
+	.p2align	2, 0x0
+.Ltmp421:
+	.cv_def_range	 .Ltmp139 .Ltmp141, reg, 332
+	.short	2
+	.short	4430
+	.short	.Ltmp423-.Ltmp422
+.Ltmp422:
+	.short	4429
+	.long	0
+	.long	0
+	.long	5074
+	.cv_inline_linetable	24 6 77 .Lfunc_begin1 .Lfunc_end1
+	.p2align	2, 0x0
+.Ltmp423:
+	.short	.Ltmp425-.Ltmp424
+.Ltmp424:
+	.short	4414
+	.long	5101
+	.short	257
+	.asciz	"this"
+	.p2align	2, 0x0
+.Ltmp425:
+	.short	2
+	.short	4430
+	.short	.Ltmp427-.Ltmp426
+.Ltmp426:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5079
-	.cv_inline_linetable	23 6 98 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	25 6 98 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp394:
-	.short	.Ltmp396-.Ltmp395
-.Ltmp395:
+.Ltmp427:
+	.short	.Ltmp429-.Ltmp428
+.Ltmp428:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp396:
+.Ltmp429:
 	.short	2
 	.short	4430
-	.short	.Ltmp398-.Ltmp397
-.Ltmp397:
+	.short	.Ltmp431-.Ltmp430
+.Ltmp430:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5080
-	.cv_inline_linetable	24 4 463 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	26 4 463 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp398:
-	.short	.Ltmp400-.Ltmp399
-.Ltmp399:
+.Ltmp431:
+	.short	.Ltmp433-.Ltmp432
+.Ltmp432:
 	.short	4414
 	.long	4215
 	.short	257
 	.asciz	"_Left"
 	.p2align	2, 0x0
-.Ltmp400:
-	.short	.Ltmp402-.Ltmp401
-.Ltmp401:
+.Ltmp433:
+	.short	.Ltmp435-.Ltmp434
+.Ltmp434:
 	.short	4414
 	.long	4215
 	.short	257
 	.asciz	"_Right"
 	.p2align	2, 0x0
-.Ltmp402:
+.Ltmp435:
 	.short	2
 	.short	4430
-	.short	.Ltmp404-.Ltmp403
-.Ltmp403:
+	.short	.Ltmp437-.Ltmp436
+.Ltmp436:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5085
-	.cv_inline_linetable	25 5 283 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	27 5 283 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp404:
-	.short	.Ltmp406-.Ltmp405
-.Ltmp405:
+.Ltmp437:
+	.short	.Ltmp439-.Ltmp438
+.Ltmp438:
 	.short	4414
 	.long	4314
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp406:
-	.short	.Ltmp408-.Ltmp407
-.Ltmp407:
+.Ltmp439:
+	.short	.Ltmp441-.Ltmp440
+.Ltmp440:
 	.short	4414
 	.long	19
 	.short	257
 	.asciz	"_Newwidth"
 	.p2align	2, 0x0
-.Ltmp408:
-	.short	.Ltmp410-.Ltmp409
-.Ltmp409:
+.Ltmp441:
+	.short	.Ltmp443-.Ltmp442
+.Ltmp442:
 	.short	4414
 	.long	4123
 	.short	256
 	.asciz	"_Oldwidth"
 	.p2align	2, 0x0
-.Ltmp410:
+.Ltmp443:
 	.short	2
 	.short	4430
-	.short	.Ltmp412-.Ltmp411
-.Ltmp411:
+	.short	.Ltmp445-.Ltmp444
+.Ltmp444:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5088
-	.cv_inline_linetable	26 6 49 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	28 6 49 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp412:
-	.short	.Ltmp414-.Ltmp413
-.Ltmp413:
+.Ltmp445:
+	.short	.Ltmp447-.Ltmp446
+.Ltmp446:
 	.short	4414
 	.long	5102
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp414:
-	.cv_def_range	 .Ltmp153 .Ltmp155, reg, 330
-	.short	.Ltmp416-.Ltmp415
-.Ltmp415:
+.Ltmp447:
+	.cv_def_range	 .Ltmp158 .Ltmp160, reg, 330
+	.short	.Ltmp449-.Ltmp448
+.Ltmp448:
 	.short	4414
 	.long	116
 	.short	1
 	.asciz	"_State"
 	.p2align	2, 0x0
-.Ltmp416:
-	.cv_def_range	 .Ltmp153 .Ltmp155, frame_ptr_rel, -12
-	.short	.Ltmp418-.Ltmp417
-.Ltmp417:
+.Ltmp449:
+	.cv_def_range	 .Ltmp158 .Ltmp160, frame_ptr_rel, -12
+	.short	.Ltmp451-.Ltmp450
+.Ltmp450:
 	.short	4414
 	.long	48
 	.short	257
 	.asciz	"_Reraise"
 	.p2align	2, 0x0
-.Ltmp418:
+.Ltmp451:
 	.short	2
 	.short	4430
-	.short	.Ltmp420-.Ltmp419
-.Ltmp419:
+	.short	.Ltmp453-.Ltmp452
+.Ltmp452:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5089
-	.cv_inline_linetable	27 3 113 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	29 3 113 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp420:
-	.short	.Ltmp422-.Ltmp421
-.Ltmp421:
+.Ltmp453:
+	.short	.Ltmp455-.Ltmp454
+.Ltmp454:
 	.short	4414
 	.long	5099
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp422:
-	.short	.Ltmp424-.Ltmp423
-.Ltmp423:
+.Ltmp455:
+	.short	.Ltmp457-.Ltmp456
+.Ltmp456:
 	.short	4414
 	.long	4097
 	.short	256
 	.asciz	"_Zero_uncaught_exceptions"
 	.p2align	2, 0x0
-.Ltmp424:
-	.short	.Ltmp426-.Ltmp425
-.Ltmp425:
+.Ltmp457:
+	.short	.Ltmp459-.Ltmp458
+.Ltmp458:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5090
-	.cv_inline_linetable	28 3 82 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	30 3 82 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp426:
-	.short	.Ltmp428-.Ltmp427
-.Ltmp427:
+.Ltmp459:
+	.short	.Ltmp461-.Ltmp460
+.Ltmp460:
 	.short	4414
 	.long	5100
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp428:
-	.short	.Ltmp430-.Ltmp429
-.Ltmp429:
+.Ltmp461:
+	.short	.Ltmp463-.Ltmp462
+.Ltmp462:
 	.short	4414
 	.long	5081
 	.short	0
 	.asciz	"_Rdbuf"
 	.p2align	2, 0x0
-.Ltmp430:
-	.cv_def_range	 .Ltmp161 .Ltmp164, reg, 330
-	.short	.Ltmp432-.Ltmp431
-.Ltmp431:
+.Ltmp463:
+	.cv_def_range	 .Ltmp166 .Ltmp169, reg, 330
+	.short	.Ltmp465-.Ltmp464
+.Ltmp464:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5074
-	.cv_inline_linetable	29 6 77 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	31 6 77 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp432:
-	.short	.Ltmp434-.Ltmp433
-.Ltmp433:
+.Ltmp465:
+	.short	.Ltmp467-.Ltmp466
+.Ltmp466:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp434:
+.Ltmp467:
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
-	.short	.Ltmp436-.Ltmp435
-.Ltmp435:
+	.short	.Ltmp469-.Ltmp468
+.Ltmp468:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5088
-	.cv_inline_linetable	30 6 49 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	32 6 49 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp436:
-	.short	.Ltmp438-.Ltmp437
-.Ltmp437:
+.Ltmp469:
+	.short	.Ltmp471-.Ltmp470
+.Ltmp470:
 	.short	4414
 	.long	5102
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp438:
-	.cv_def_range	 .Ltmp174 .Ltmp176, reg, 330
-	.short	.Ltmp440-.Ltmp439
-.Ltmp439:
+.Ltmp471:
+	.cv_def_range	 .Ltmp179 .Ltmp181, reg, 330
+	.short	.Ltmp473-.Ltmp472
+.Ltmp472:
 	.short	4414
 	.long	116
 	.short	257
 	.asciz	"_State"
 	.p2align	2, 0x0
-.Ltmp440:
-	.short	.Ltmp442-.Ltmp441
-.Ltmp441:
+.Ltmp473:
+	.short	.Ltmp475-.Ltmp474
+.Ltmp474:
 	.short	4414
 	.long	48
 	.short	257
 	.asciz	"_Reraise"
 	.p2align	2, 0x0
-.Ltmp442:
-	.short	.Ltmp444-.Ltmp443
-.Ltmp443:
+.Ltmp475:
+	.short	.Ltmp477-.Ltmp476
+.Ltmp476:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5091
-	.cv_inline_linetable	31 5 188 .Lfunc_begin1 .Lfunc_end1
+	.cv_inline_linetable	33 5 188 .Lfunc_begin1 .Lfunc_end1
 	.p2align	2, 0x0
-.Ltmp444:
-	.short	.Ltmp446-.Ltmp445
-.Ltmp445:
+.Ltmp477:
+	.short	.Ltmp479-.Ltmp478
+.Ltmp478:
 	.short	4414
 	.long	5098
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp446:
-	.cv_def_range	 .Ltmp174 .Ltmp176, reg, 330
+.Ltmp479:
+	.cv_def_range	 .Ltmp179 .Ltmp181, reg, 330
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
 	.short	2
 	.short	4431
-.Ltmp312:
+.Ltmp345:
 	.p2align	2, 0x0
-	.cv_linetable	10, "??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z", .Lfunc_end1
+	.cv_linetable	12, "??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z", .Lfunc_end1
 	.section	.debug$S,"dr",associative,"??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp448-.Ltmp447
-.Ltmp447:
-	.short	.Ltmp450-.Ltmp449
-.Ltmp449:
+	.long	.Ltmp481-.Ltmp480
+.Ltmp480:
+	.short	.Ltmp483-.Ltmp482
+.Ltmp482:
 	.short	4423
 	.long	0
 	.long	0
@@ -2703,9 +2957,9 @@ main.extracted:
 	.byte	129
 	.asciz	"basic_ostream<char,std::char_traits<char> >::sentry::~sentry"
 	.p2align	2, 0x0
-.Ltmp450:
-	.short	.Ltmp452-.Ltmp451
-.Ltmp451:
+.Ltmp483:
+	.short	.Ltmp485-.Ltmp484
+.Ltmp484:
 	.short	4114
 	.long	48
 	.long	0
@@ -2715,93 +2969,93 @@ main.extracted:
 	.short	0
 	.long	1212432
 	.p2align	2, 0x0
-.Ltmp452:
-	.short	.Ltmp454-.Ltmp453
-.Ltmp453:
+.Ltmp485:
+	.short	.Ltmp487-.Ltmp486
+.Ltmp486:
 	.short	4456
 	.long	1
 	.long	5090
 	.p2align	2, 0x0
-.Ltmp454:
-	.short	.Ltmp456-.Ltmp455
-.Ltmp455:
+.Ltmp487:
+	.short	.Ltmp489-.Ltmp488
+.Ltmp488:
 	.short	4414
 	.long	5099
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp456:
-	.cv_def_range	 .Lfunc_begin2 .Ltmp187, reg, 330
-	.cv_def_range	 .Ltmp187 .Ltmp194 .Ltmp195 .Lfunc_end2, reg, 332
-	.short	.Ltmp458-.Ltmp457
-.Ltmp457:
+.Ltmp489:
+	.cv_def_range	 .Lfunc_begin2 .Ltmp192, reg, 330
+	.cv_def_range	 .Ltmp192 .Ltmp199 .Ltmp200 .Lfunc_end2, reg, 332
+	.short	.Ltmp491-.Ltmp490
+.Ltmp490:
 	.short	4414
 	.long	4097
 	.short	256
 	.asciz	"_Zero_uncaught_exceptions"
 	.p2align	2, 0x0
-.Ltmp458:
-	.short	.Ltmp460-.Ltmp459
-.Ltmp459:
+.Ltmp491:
+	.short	.Ltmp493-.Ltmp492
+.Ltmp492:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5090
-	.cv_inline_linetable	33 3 82 .Lfunc_begin2 .Lfunc_end2
+	.cv_inline_linetable	35 3 82 .Lfunc_begin2 .Lfunc_end2
 	.p2align	2, 0x0
-.Ltmp460:
-	.short	.Ltmp462-.Ltmp461
-.Ltmp461:
+.Ltmp493:
+	.short	.Ltmp495-.Ltmp494
+.Ltmp494:
 	.short	4414
 	.long	5100
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp462:
-	.cv_def_range	 .Ltmp189 .Ltmp193 .Ltmp195 .Lfunc_end2, reg, 332
-	.short	.Ltmp464-.Ltmp463
-.Ltmp463:
+.Ltmp495:
+	.cv_def_range	 .Ltmp194 .Ltmp198 .Ltmp200 .Lfunc_end2, reg, 332
+	.short	.Ltmp497-.Ltmp496
+.Ltmp496:
 	.short	4414
 	.long	5081
 	.short	0
 	.asciz	"_Rdbuf"
 	.p2align	2, 0x0
-.Ltmp464:
-	.cv_def_range	 .Ltmp191 .Ltmp193, reg, 330
-	.short	.Ltmp466-.Ltmp465
-.Ltmp465:
+.Ltmp497:
+	.cv_def_range	 .Ltmp196 .Ltmp198, reg, 330
+	.short	.Ltmp499-.Ltmp498
+.Ltmp498:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5074
-	.cv_inline_linetable	34 6 77 .Lfunc_begin2 .Lfunc_end2
+	.cv_inline_linetable	36 6 77 .Lfunc_begin2 .Lfunc_end2
 	.p2align	2, 0x0
-.Ltmp466:
-	.short	.Ltmp468-.Ltmp467
-.Ltmp467:
+.Ltmp499:
+	.short	.Ltmp501-.Ltmp500
+.Ltmp500:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp468:
+.Ltmp501:
 	.short	2
 	.short	4430
 	.short	2
 	.short	4430
 	.short	2
 	.short	4431
-.Ltmp448:
+.Ltmp481:
 	.p2align	2, 0x0
-	.cv_linetable	32, "??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ", .Lfunc_end2
+	.cv_linetable	34, "??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ", .Lfunc_end2
 	.section	.debug$S,"dr",associative,"??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ"
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp470-.Ltmp469
-.Ltmp469:
-	.short	.Ltmp472-.Ltmp471
-.Ltmp471:
+	.long	.Ltmp503-.Ltmp502
+.Ltmp502:
+	.short	.Ltmp505-.Ltmp504
+.Ltmp504:
 	.short	4423
 	.long	0
 	.long	0
@@ -2815,9 +3069,9 @@ main.extracted:
 	.byte	129
 	.asciz	"basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base"
 	.p2align	2, 0x0
-.Ltmp472:
-	.short	.Ltmp474-.Ltmp473
-.Ltmp473:
+.Ltmp505:
+	.short	.Ltmp507-.Ltmp506
+.Ltmp506:
 	.short	4114
 	.long	56
 	.long	0
@@ -2827,64 +3081,64 @@ main.extracted:
 	.short	0
 	.long	1212432
 	.p2align	2, 0x0
-.Ltmp474:
-	.short	.Ltmp476-.Ltmp475
-.Ltmp475:
+.Ltmp507:
+	.short	.Ltmp509-.Ltmp508
+.Ltmp508:
 	.short	4456
 	.long	1
 	.long	5074
 	.p2align	2, 0x0
-.Ltmp476:
-	.short	.Ltmp478-.Ltmp477
-.Ltmp477:
+.Ltmp509:
+	.short	.Ltmp511-.Ltmp510
+.Ltmp510:
 	.short	4414
 	.long	5100
 	.short	1
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp478:
-	.cv_def_range	 .Lfunc_begin3 .Ltmp201, reg, 330
-	.short	.Ltmp480-.Ltmp479
-.Ltmp479:
+.Ltmp511:
+	.cv_def_range	 .Lfunc_begin3 .Ltmp206, reg, 330
+	.short	.Ltmp513-.Ltmp512
+.Ltmp512:
 	.short	4414
 	.long	5081
 	.short	0
 	.asciz	"_Rdbuf"
 	.p2align	2, 0x0
-.Ltmp480:
-	.cv_def_range	 .Ltmp203 .Ltmp205, reg, 330
-	.short	.Ltmp482-.Ltmp481
-.Ltmp481:
+.Ltmp513:
+	.cv_def_range	 .Ltmp208 .Ltmp210, reg, 330
+	.short	.Ltmp515-.Ltmp514
+.Ltmp514:
 	.short	4429
 	.long	0
 	.long	0
 	.long	5074
-	.cv_inline_linetable	36 6 77 .Lfunc_begin3 .Lfunc_end3
+	.cv_inline_linetable	38 6 77 .Lfunc_begin3 .Lfunc_end3
 	.p2align	2, 0x0
-.Ltmp482:
-	.short	.Ltmp484-.Ltmp483
-.Ltmp483:
+.Ltmp515:
+	.short	.Ltmp517-.Ltmp516
+.Ltmp516:
 	.short	4414
 	.long	5101
 	.short	257
 	.asciz	"this"
 	.p2align	2, 0x0
-.Ltmp484:
+.Ltmp517:
 	.short	2
 	.short	4430
 	.short	2
 	.short	4431
-.Ltmp470:
+.Ltmp503:
 	.p2align	2, 0x0
-	.cv_linetable	35, "??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ", .Lfunc_end3
+	.cv_linetable	37, "??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ", .Lfunc_end3
 	.section	.debug$S,"dr",associative,main.extracted
 	.p2align	2, 0x0
 	.long	4
 	.long	241
-	.long	.Ltmp486-.Ltmp485
-.Ltmp485:
-	.short	.Ltmp488-.Ltmp487
-.Ltmp487:
+	.long	.Ltmp519-.Ltmp518
+.Ltmp518:
+	.short	.Ltmp521-.Ltmp520
+.Ltmp520:
 	.short	4422
 	.long	0
 	.long	0
@@ -2898,428 +3152,474 @@ main.extracted:
 	.byte	128
 	.asciz	"main.extracted"
 	.p2align	2, 0x0
-.Ltmp488:
-	.short	.Ltmp490-.Ltmp489
-.Ltmp489:
+.Ltmp521:
+	.short	.Ltmp523-.Ltmp522
+.Ltmp522:
 	.short	4114
+	.long	208
 	.long	0
 	.long	0
-	.long	0
-	.long	0
+	.long	24
 	.long	0
 	.short	0
-	.long	1048576
+	.long	1134848
 	.p2align	2, 0x0
-.Ltmp490:
-	.short	.Ltmp492-.Ltmp491
-.Ltmp491:
+.Ltmp523:
+	.short	.Ltmp525-.Ltmp524
+.Ltmp524:
+	.short	4414
+	.long	5094
+	.short	256
+	.asciz	"x1"
+	.p2align	2, 0x0
+.Ltmp525:
+	.short	.Ltmp527-.Ltmp526
+.Ltmp526:
 	.short	4414
 	.long	5094
 	.short	0
-	.asciz	"x1"
+	.asciz	"x4"
 	.p2align	2, 0x0
-.Ltmp492:
-	.cv_def_range	 .Lfunc_begin4 .Lfunc_end4, reg_rel, 336, 0, 0
-	.short	.Ltmp494-.Ltmp493
-.Ltmp493:
+.Ltmp527:
+	.cv_def_range	 .Ltmp214 .Ltmp232, reg_rel, 329, 0, 0
+	.short	.Ltmp529-.Ltmp528
+.Ltmp528:
+	.short	4414
+	.long	18
+	.short	0
+	.asciz	".omp.ub"
+	.p2align	2, 0x0
+.Ltmp529:
+	.cv_def_range	 .Ltmp214 .Ltmp219, reg, 17
+	.short	.Ltmp531-.Ltmp530
+.Ltmp530:
+	.short	4414
+	.long	5094
+	.short	0
+	.asciz	"x5"
+	.p2align	2, 0x0
+.Ltmp531:
+	.cv_def_range	 .Ltmp215 .Ltmp221, reg_rel, 331, 0, 0
+	.short	.Ltmp533-.Ltmp532
+.Ltmp532:
+	.short	4414
+	.long	5094
+	.short	0
+	.asciz	"x3"
+	.p2align	2, 0x0
+.Ltmp533:
+	.cv_def_range	 .Ltmp216 .Ltmp222, reg_rel, 336, 0, 0
+	.short	.Ltmp535-.Ltmp534
+.Ltmp534:
 	.short	4414
 	.long	5094
 	.short	0
 	.asciz	"x2"
 	.p2align	2, 0x0
-.Ltmp494:
-	.cv_def_range	 .Lfunc_begin4 .Lfunc_end4, reg_rel, 337, 0, 0
-	.short	.Ltmp496-.Ltmp495
-.Ltmp495:
-	.short	4414
-	.long	5105
-	.short	0
-	.asciz	"x3"
+.Ltmp535:
+	.cv_def_range	 .Ltmp216 .Ltmp220, reg_rel, 337, 0, 0
+	.short	.Ltmp537-.Ltmp536
+.Ltmp536:
+	.short	4359
+	.long	18
+	.byte	0x00, 0x00
+	.asciz	".omp.iv"
 	.p2align	2, 0x0
-.Ltmp496:
-	.cv_def_range	 .Lfunc_begin4 .Lfunc_end4, reg_rel, 335, 0, 40
-	.short	.Ltmp498-.Ltmp497
-.Ltmp497:
-	.short	4414
-	.long	5105
-	.short	0
-	.asciz	"x4"
+.Ltmp537:
+	.short	.Ltmp539-.Ltmp538
+.Ltmp538:
+	.short	4355
+	.long	0
+	.long	0
+	.long	.Ltmp231-.Ltmp218
+	.secrel32	.Ltmp218
+	.secidx	.Lfunc_begin4
+	.byte	0
 	.p2align	2, 0x0
-.Ltmp498:
-	.cv_def_range	 .Lfunc_begin4 .Lfunc_end4, reg_rel, 335, 0, 48
-	.short	.Ltmp500-.Ltmp499
-.Ltmp499:
+.Ltmp539:
+	.short	.Ltmp541-.Ltmp540
+.Ltmp540:
 	.short	4414
-	.long	5105
-	.short	0
-	.asciz	"x5"
+	.long	18
+	.short	256
+	.asciz	".omp.ub"
 	.p2align	2, 0x0
-.Ltmp500:
-	.cv_def_range	 .Lfunc_begin4 .Lfunc_end4, reg_rel, 335, 0, 56
+.Ltmp541:
+	.short	2
+	.short	6
 	.short	2
 	.short	4431
-.Ltmp486:
+.Ltmp519:
 	.p2align	2, 0x0
-	.cv_linetable	37, main.extracted, .Lfunc_end4
+	.cv_linetable	39, main.extracted, .Lfunc_end4
 	.section	.debug$S,"dr"
 	.long	241
-	.long	.Ltmp502-.Ltmp501
-.Ltmp501:
-	.short	.Ltmp504-.Ltmp503
-.Ltmp503:
+	.long	.Ltmp543-.Ltmp542
+.Ltmp542:
+	.short	.Ltmp545-.Ltmp544
+.Ltmp544:
+	.short	4365
+	.long	18
+	.secrel32	"?ITERATIONS@@3JA"
+	.secidx	"?ITERATIONS@@3JA"
+	.asciz	"ITERATIONS"
+	.p2align	2, 0x0
+.Ltmp545:
+	.short	.Ltmp547-.Ltmp546
+.Ltmp546:
 	.short	4359
 	.long	4097
 	.byte	0x01, 0x00
 	.asciz	"std::chrono::steady_clock::is_steady"
 	.p2align	2, 0x0
-.Ltmp504:
-	.short	.Ltmp506-.Ltmp505
-.Ltmp505:
+.Ltmp547:
+	.short	.Ltmp549-.Ltmp548
+.Ltmp548:
 	.short	4359
 	.long	4123
 	.byte	0x01, 0x00
 	.asciz	"std::ratio<1,1000000000>::num"
 	.p2align	2, 0x0
-.Ltmp506:
-	.short	.Ltmp508-.Ltmp507
-.Ltmp507:
+.Ltmp549:
+	.short	.Ltmp551-.Ltmp550
+.Ltmp550:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x00, 0xca
 	.byte	0x9a, 0x3b
 	.asciz	"std::ratio<1,1000000000>::den"
 	.p2align	2, 0x0
-.Ltmp508:
-	.short	.Ltmp510-.Ltmp509
-.Ltmp509:
+.Ltmp551:
+	.short	.Ltmp553-.Ltmp552
+.Ltmp552:
 	.short	4359
 	.long	4123
 	.byte	0x01, 0x00
 	.asciz	"std::ratio<1,1000>::num"
 	.p2align	2, 0x0
-.Ltmp510:
-	.short	.Ltmp512-.Ltmp511
-.Ltmp511:
+.Ltmp553:
+	.short	.Ltmp555-.Ltmp554
+.Ltmp554:
 	.short	4359
 	.long	4123
 	.byte	0xe8, 0x03
 	.asciz	"std::ratio<1,1000>::den"
 	.p2align	2, 0x0
-.Ltmp512:
-	.short	.Ltmp514-.Ltmp513
-.Ltmp513:
+.Ltmp555:
+	.short	.Ltmp557-.Ltmp556
+.Ltmp556:
 	.short	4359
 	.long	4215
 	.byte	0x01, 0x00
 	.asciz	"std::_Iosb<int>::skipws"
 	.p2align	2, 0x0
-.Ltmp514:
-	.short	.Ltmp516-.Ltmp515
-.Ltmp515:
+.Ltmp557:
+	.short	.Ltmp559-.Ltmp558
+.Ltmp558:
 	.short	4359
 	.long	4215
 	.byte	0x02, 0x00
 	.asciz	"std::_Iosb<int>::unitbuf"
 	.p2align	2, 0x0
-.Ltmp516:
-	.short	.Ltmp518-.Ltmp517
-.Ltmp517:
+.Ltmp559:
+	.short	.Ltmp561-.Ltmp560
+.Ltmp560:
 	.short	4359
 	.long	4215
 	.byte	0x04, 0x00
 	.asciz	"std::_Iosb<int>::uppercase"
 	.p2align	2, 0x0
-.Ltmp518:
-	.short	.Ltmp520-.Ltmp519
-.Ltmp519:
+.Ltmp561:
+	.short	.Ltmp563-.Ltmp562
+.Ltmp562:
 	.short	4359
 	.long	4215
 	.byte	0x08, 0x00
 	.asciz	"std::_Iosb<int>::showbase"
 	.p2align	2, 0x0
-.Ltmp520:
-	.short	.Ltmp522-.Ltmp521
-.Ltmp521:
+.Ltmp563:
+	.short	.Ltmp565-.Ltmp564
+.Ltmp564:
 	.short	4359
 	.long	4215
 	.byte	0x10, 0x00
 	.asciz	"std::_Iosb<int>::showpoint"
 	.p2align	2, 0x0
-.Ltmp522:
-	.short	.Ltmp524-.Ltmp523
-.Ltmp523:
+.Ltmp565:
+	.short	.Ltmp567-.Ltmp566
+.Ltmp566:
 	.short	4359
 	.long	4215
 	.byte	0x20, 0x00
 	.asciz	"std::_Iosb<int>::showpos"
 	.p2align	2, 0x0
-.Ltmp524:
-	.short	.Ltmp526-.Ltmp525
-.Ltmp525:
+.Ltmp567:
+	.short	.Ltmp569-.Ltmp568
+.Ltmp568:
 	.short	4359
 	.long	4215
 	.byte	0x40, 0x00
 	.asciz	"std::_Iosb<int>::left"
 	.p2align	2, 0x0
-.Ltmp526:
-	.short	.Ltmp528-.Ltmp527
-.Ltmp527:
+.Ltmp569:
+	.short	.Ltmp571-.Ltmp570
+.Ltmp570:
 	.short	4359
 	.long	4215
 	.byte	0x80, 0x00
 	.asciz	"std::_Iosb<int>::right"
 	.p2align	2, 0x0
-.Ltmp528:
-	.short	.Ltmp530-.Ltmp529
-.Ltmp529:
+.Ltmp571:
+	.short	.Ltmp573-.Ltmp572
+.Ltmp572:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x01
 	.asciz	"std::_Iosb<int>::internal"
 	.p2align	2, 0x0
-.Ltmp530:
-	.short	.Ltmp532-.Ltmp531
-.Ltmp531:
+.Ltmp573:
+	.short	.Ltmp575-.Ltmp574
+.Ltmp574:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x02
 	.asciz	"std::_Iosb<int>::dec"
 	.p2align	2, 0x0
-.Ltmp532:
-	.short	.Ltmp534-.Ltmp533
-.Ltmp533:
+.Ltmp575:
+	.short	.Ltmp577-.Ltmp576
+.Ltmp576:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x04
 	.asciz	"std::_Iosb<int>::oct"
 	.p2align	2, 0x0
-.Ltmp534:
-	.short	.Ltmp536-.Ltmp535
-.Ltmp535:
+.Ltmp577:
+	.short	.Ltmp579-.Ltmp578
+.Ltmp578:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x08
 	.asciz	"std::_Iosb<int>::hex"
 	.p2align	2, 0x0
-.Ltmp536:
-	.short	.Ltmp538-.Ltmp537
-.Ltmp537:
+.Ltmp579:
+	.short	.Ltmp581-.Ltmp580
+.Ltmp580:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x10
 	.asciz	"std::_Iosb<int>::scientific"
 	.p2align	2, 0x0
-.Ltmp538:
-	.short	.Ltmp540-.Ltmp539
-.Ltmp539:
+.Ltmp581:
+	.short	.Ltmp583-.Ltmp582
+.Ltmp582:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x20
 	.asciz	"std::_Iosb<int>::fixed"
 	.p2align	2, 0x0
-.Ltmp540:
-	.short	.Ltmp542-.Ltmp541
-.Ltmp541:
+.Ltmp583:
+	.short	.Ltmp585-.Ltmp584
+.Ltmp584:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x30
 	.asciz	"std::_Iosb<int>::hexfloat"
 	.p2align	2, 0x0
-.Ltmp542:
-	.short	.Ltmp544-.Ltmp543
-.Ltmp543:
+.Ltmp585:
+	.short	.Ltmp587-.Ltmp586
+.Ltmp586:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x40
 	.asciz	"std::_Iosb<int>::boolalpha"
 	.p2align	2, 0x0
-.Ltmp544:
-	.short	.Ltmp546-.Ltmp545
-.Ltmp545:
+.Ltmp587:
+	.short	.Ltmp589-.Ltmp588
+.Ltmp588:
 	.short	4359
 	.long	4215
 	.byte	0xc0, 0x01
 	.asciz	"std::_Iosb<int>::adjustfield"
 	.p2align	2, 0x0
-.Ltmp546:
-	.short	.Ltmp548-.Ltmp547
-.Ltmp547:
+.Ltmp589:
+	.short	.Ltmp591-.Ltmp590
+.Ltmp590:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x0e
 	.asciz	"std::_Iosb<int>::basefield"
 	.p2align	2, 0x0
-.Ltmp548:
-	.short	.Ltmp550-.Ltmp549
-.Ltmp549:
+.Ltmp591:
+	.short	.Ltmp593-.Ltmp592
+.Ltmp592:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x30
 	.asciz	"std::_Iosb<int>::floatfield"
 	.p2align	2, 0x0
-.Ltmp550:
-	.short	.Ltmp552-.Ltmp551
-.Ltmp551:
+.Ltmp593:
+	.short	.Ltmp595-.Ltmp594
+.Ltmp594:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x00
 	.asciz	"std::_Iosb<int>::goodbit"
 	.p2align	2, 0x0
-.Ltmp552:
-	.short	.Ltmp554-.Ltmp553
-.Ltmp553:
+.Ltmp595:
+	.short	.Ltmp597-.Ltmp596
+.Ltmp596:
 	.short	4359
 	.long	4215
 	.byte	0x01, 0x00
 	.asciz	"std::_Iosb<int>::eofbit"
 	.p2align	2, 0x0
-.Ltmp554:
-	.short	.Ltmp556-.Ltmp555
-.Ltmp555:
+.Ltmp597:
+	.short	.Ltmp599-.Ltmp598
+.Ltmp598:
 	.short	4359
 	.long	4215
 	.byte	0x02, 0x00
 	.asciz	"std::_Iosb<int>::failbit"
 	.p2align	2, 0x0
-.Ltmp556:
-	.short	.Ltmp558-.Ltmp557
-.Ltmp557:
+.Ltmp599:
+	.short	.Ltmp601-.Ltmp600
+.Ltmp600:
 	.short	4359
 	.long	4215
 	.byte	0x04, 0x00
 	.asciz	"std::_Iosb<int>::badbit"
 	.p2align	2, 0x0
-.Ltmp558:
-	.short	.Ltmp560-.Ltmp559
-.Ltmp559:
+.Ltmp601:
+	.short	.Ltmp603-.Ltmp602
+.Ltmp602:
 	.short	4359
 	.long	4215
 	.byte	0x01, 0x00
 	.asciz	"std::_Iosb<int>::in"
 	.p2align	2, 0x0
-.Ltmp560:
-	.short	.Ltmp562-.Ltmp561
-.Ltmp561:
+.Ltmp603:
+	.short	.Ltmp605-.Ltmp604
+.Ltmp604:
 	.short	4359
 	.long	4215
 	.byte	0x02, 0x00
 	.asciz	"std::_Iosb<int>::out"
 	.p2align	2, 0x0
-.Ltmp562:
-	.short	.Ltmp564-.Ltmp563
-.Ltmp563:
+.Ltmp605:
+	.short	.Ltmp607-.Ltmp606
+.Ltmp606:
 	.short	4359
 	.long	4215
 	.byte	0x01, 0x00
 	.asciz	"locale::collate"
 	.p2align	2, 0x0
-.Ltmp564:
-	.short	.Ltmp566-.Ltmp565
-.Ltmp565:
+.Ltmp607:
+	.short	.Ltmp609-.Ltmp608
+.Ltmp608:
 	.short	4359
 	.long	4215
 	.byte	0x02, 0x00
 	.asciz	"locale::ctype"
 	.p2align	2, 0x0
-.Ltmp566:
-	.short	.Ltmp568-.Ltmp567
-.Ltmp567:
+.Ltmp609:
+	.short	.Ltmp611-.Ltmp610
+.Ltmp610:
 	.short	4359
 	.long	4215
 	.byte	0x04, 0x00
 	.asciz	"locale::monetary"
 	.p2align	2, 0x0
-.Ltmp568:
-	.short	.Ltmp570-.Ltmp569
-.Ltmp569:
+.Ltmp611:
+	.short	.Ltmp613-.Ltmp612
+.Ltmp612:
 	.short	4359
 	.long	4215
 	.byte	0x08, 0x00
 	.asciz	"locale::numeric"
 	.p2align	2, 0x0
-.Ltmp570:
-	.short	.Ltmp572-.Ltmp571
-.Ltmp571:
+.Ltmp613:
+	.short	.Ltmp615-.Ltmp614
+.Ltmp614:
 	.short	4359
 	.long	4215
 	.byte	0x10, 0x00
 	.asciz	"locale::time"
 	.p2align	2, 0x0
-.Ltmp572:
-	.short	.Ltmp574-.Ltmp573
-.Ltmp573:
+.Ltmp615:
+	.short	.Ltmp617-.Ltmp616
+.Ltmp616:
 	.short	4359
 	.long	4215
 	.byte	0x20, 0x00
 	.asciz	"locale::messages"
 	.p2align	2, 0x0
-.Ltmp574:
-	.short	.Ltmp576-.Ltmp575
-.Ltmp575:
+.Ltmp617:
+	.short	.Ltmp619-.Ltmp618
+.Ltmp618:
 	.short	4359
 	.long	4215
 	.byte	0x3f, 0x00
 	.asciz	"locale::all"
 	.p2align	2, 0x0
-.Ltmp576:
-	.short	.Ltmp578-.Ltmp577
-.Ltmp577:
+.Ltmp619:
+	.short	.Ltmp621-.Ltmp620
+.Ltmp620:
 	.short	4359
 	.long	4215
 	.byte	0x00, 0x00
 	.asciz	"locale::none"
 	.p2align	2, 0x0
-.Ltmp578:
-	.short	.Ltmp580-.Ltmp579
-.Ltmp579:
+.Ltmp621:
+	.short	.Ltmp623-.Ltmp622
+.Ltmp622:
 	.short	4359
 	.long	4197
 	.byte	0x10, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_BUF_SIZE"
 	.p2align	2, 0x0
-.Ltmp580:
-	.short	.Ltmp582-.Ltmp581
-.Ltmp581:
+.Ltmp623:
+	.short	.Ltmp625-.Ltmp624
+.Ltmp624:
 	.short	4359
 	.long	4197
 	.byte	0x0f, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Alloc_mask"
 	.p2align	2, 0x0
-.Ltmp582:
-	.short	.Ltmp584-.Ltmp583
-.Ltmp583:
+.Ltmp625:
+	.short	.Ltmp627-.Ltmp626
+.Ltmp626:
 	.short	4359
 	.long	4197
 	.byte	0x0f, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Small_string_capacity"
 	.p2align	2, 0x0
-.Ltmp584:
-	.short	.Ltmp586-.Ltmp585
-.Ltmp585:
+.Ltmp627:
+	.short	.Ltmp629-.Ltmp628
+.Ltmp628:
 	.short	4359
 	.long	4097
 	.byte	0x01, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Can_memcpy_val"
 	.p2align	2, 0x0
-.Ltmp586:
-	.short	.Ltmp588-.Ltmp587
-.Ltmp587:
+.Ltmp629:
+	.short	.Ltmp631-.Ltmp630
+.Ltmp630:
 	.short	4359
 	.long	4197
 	.byte	0x08, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Memcpy_val_offset"
 	.p2align	2, 0x0
-.Ltmp588:
-	.short	.Ltmp590-.Ltmp589
-.Ltmp589:
+.Ltmp631:
+	.short	.Ltmp633-.Ltmp632
+.Ltmp632:
 	.short	4359
 	.long	4197
 	.byte	0x20, 0x00
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Memcpy_val_size"
 	.p2align	2, 0x0
-.Ltmp590:
-	.short	.Ltmp592-.Ltmp591
-.Ltmp591:
+.Ltmp633:
+	.short	.Ltmp635-.Ltmp634
+.Ltmp634:
 	.short	4359
 	.long	4197
 	.byte	0x0a, 0x80, 0xff, 0xff
@@ -3327,9 +3627,9 @@ main.extracted:
 	.byte	0xff, 0xff
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::npos"
 	.p2align	2, 0x0
-.Ltmp592:
-	.short	.Ltmp594-.Ltmp593
-.Ltmp593:
+.Ltmp635:
+	.short	.Ltmp637-.Ltmp636
+.Ltmp636:
 	.short	4359
 	.long	4197
 	.byte	0x0a, 0x80, 0xff, 0xff
@@ -3337,637 +3637,637 @@ main.extracted:
 	.byte	0xff, 0xff
 	.asciz	"std::basic_string_view<char,std::char_traits<char> >::npos"
 	.p2align	2, 0x0
-.Ltmp594:
-	.short	.Ltmp596-.Ltmp595
-.Ltmp595:
+.Ltmp637:
+	.short	.Ltmp639-.Ltmp638
+.Ltmp638:
 	.short	4359
 	.long	4197
 	.byte	0x10, 0x00
 	.asciz	"std::_String_val<std::_Simple_types<char> >::_BUF_SIZE"
 	.p2align	2, 0x0
-.Ltmp596:
-	.short	.Ltmp598-.Ltmp597
-.Ltmp597:
+.Ltmp639:
+	.short	.Ltmp641-.Ltmp640
+.Ltmp640:
 	.short	4359
 	.long	4197
 	.byte	0x0f, 0x00
 	.asciz	"std::_String_val<std::_Simple_types<char> >::_Alloc_mask"
 	.p2align	2, 0x0
-.Ltmp598:
-	.short	.Ltmp600-.Ltmp599
-.Ltmp599:
+.Ltmp641:
+	.short	.Ltmp643-.Ltmp642
+.Ltmp642:
 	.short	4359
 	.long	4197
 	.byte	0x0f, 0x00
 	.asciz	"std::_String_val<std::_Simple_types<char> >::_Small_string_capacity"
 	.p2align	2, 0x0
-.Ltmp600:
-	.short	.Ltmp602-.Ltmp601
-.Ltmp601:
+.Ltmp643:
+	.short	.Ltmp645-.Ltmp644
+.Ltmp644:
 	.short	4359
 	.long	4097
 	.byte	0x01, 0x00
 	.asciz	"std::integral_constant<bool,1>::value"
 	.p2align	2, 0x0
-.Ltmp602:
-	.short	.Ltmp604-.Ltmp603
-.Ltmp603:
+.Ltmp645:
+	.short	.Ltmp647-.Ltmp646
+.Ltmp646:
 	.short	4359
 	.long	4097
 	.byte	0x00, 0x00
 	.asciz	"std::integral_constant<bool,0>::value"
 	.p2align	2, 0x0
-.Ltmp604:
-	.short	.Ltmp606-.Ltmp605
-.Ltmp605:
+.Ltmp647:
+	.short	.Ltmp649-.Ltmp648
+.Ltmp648:
 	.short	4359
 	.long	4097
 	.byte	0x00, 0x00
 	.asciz	"std::_Iterator_base12::_Unwrap_when_unverified"
 	.p2align	2, 0x0
-.Ltmp606:
-	.short	.Ltmp608-.Ltmp607
-.Ltmp607:
+.Ltmp649:
+	.short	.Ltmp651-.Ltmp650
+.Ltmp650:
 	.short	4359
 	.long	4123
 	.byte	0x01, 0x00
 	.asciz	"std::ratio<1,1000000>::num"
 	.p2align	2, 0x0
-.Ltmp608:
-	.short	.Ltmp610-.Ltmp609
-.Ltmp609:
+.Ltmp651:
+	.short	.Ltmp653-.Ltmp652
+.Ltmp652:
 	.short	4359
 	.long	4123
 	.byte	0x03, 0x80, 0x40, 0x42
 	.byte	0x0f, 0x00
 	.asciz	"std::ratio<1,1000000>::den"
 	.p2align	2, 0x0
-.Ltmp610:
-.Ltmp502:
+.Ltmp653:
+.Ltmp543:
 	.p2align	2, 0x0
 	.long	241
-	.long	.Ltmp612-.Ltmp611
-.Ltmp611:
-	.short	.Ltmp614-.Ltmp613
-.Ltmp613:
+	.long	.Ltmp655-.Ltmp654
+.Ltmp654:
+	.short	.Ltmp657-.Ltmp656
+.Ltmp656:
 	.short	4360
 	.long	4125
 	.asciz	"std::nano"
 	.p2align	2, 0x0
-.Ltmp614:
-	.short	.Ltmp616-.Ltmp615
-.Ltmp615:
+.Ltmp657:
+	.short	.Ltmp659-.Ltmp658
+.Ltmp658:
 	.short	4360
 	.long	4145
 	.asciz	"std::chrono::nanoseconds"
 	.p2align	2, 0x0
-.Ltmp616:
-	.short	.Ltmp618-.Ltmp617
-.Ltmp617:
+.Ltmp659:
+	.short	.Ltmp661-.Ltmp660
+.Ltmp660:
 	.short	4360
 	.long	4104
 	.asciz	"std::chrono::steady_clock"
 	.p2align	2, 0x0
-.Ltmp618:
-	.short	.Ltmp620-.Ltmp619
-.Ltmp619:
+.Ltmp661:
+	.short	.Ltmp663-.Ltmp662
+.Ltmp662:
 	.short	4360
 	.long	4121
 	.asciz	"std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<long long,std::ratio<1,1000000000> > >"
 	.p2align	2, 0x0
-.Ltmp620:
-	.short	.Ltmp622-.Ltmp621
-.Ltmp621:
+.Ltmp663:
+	.short	.Ltmp665-.Ltmp664
+.Ltmp664:
 	.short	4360
 	.long	19
 	.asciz	"intmax_t"
 	.p2align	2, 0x0
-.Ltmp622:
-	.short	.Ltmp624-.Ltmp623
-.Ltmp623:
+.Ltmp665:
+	.short	.Ltmp667-.Ltmp666
+.Ltmp666:
 	.short	4360
 	.long	4125
 	.asciz	"std::ratio<1,1000000000>"
 	.p2align	2, 0x0
-.Ltmp624:
-	.short	.Ltmp626-.Ltmp625
-.Ltmp625:
+.Ltmp667:
+	.short	.Ltmp669-.Ltmp668
+.Ltmp668:
 	.short	4360
 	.long	4145
 	.asciz	"std::common_type_t<duration<long long,ratio<1,1000000000> > >"
 	.p2align	2, 0x0
-.Ltmp626:
-	.short	.Ltmp628-.Ltmp627
-.Ltmp627:
+.Ltmp669:
+	.short	.Ltmp671-.Ltmp670
+.Ltmp670:
 	.short	4360
 	.long	4145
 	.asciz	"std::chrono::duration<long long,std::ratio<1,1000000000> >"
 	.p2align	2, 0x0
-.Ltmp628:
-	.short	.Ltmp630-.Ltmp629
-.Ltmp629:
+.Ltmp671:
+	.short	.Ltmp673-.Ltmp672
+.Ltmp672:
 	.short	4360
 	.long	4145
 	.asciz	"std::common_type_t<std::chrono::duration<long long,std::ratio<1,1000000000> >,std::chrono::duration<long long,std::ratio<1,1000000000> > >"
 	.p2align	2, 0x0
-.Ltmp630:
-	.short	.Ltmp632-.Ltmp631
-.Ltmp631:
+.Ltmp673:
+	.short	.Ltmp675-.Ltmp674
+.Ltmp674:
 	.short	4360
 	.long	4145
 	.asciz	"std::common_type_t<duration<long long,ratio<1,1000000000> >,duration<long long,ratio<1,1000000000> > >"
 	.p2align	2, 0x0
-.Ltmp632:
-	.short	.Ltmp634-.Ltmp633
-.Ltmp633:
+.Ltmp675:
+	.short	.Ltmp677-.Ltmp676
+.Ltmp676:
 	.short	4360
 	.long	4187
 	.asciz	"std::common_type_t<duration<long long,ratio<1,1000> > >"
 	.p2align	2, 0x0
-.Ltmp634:
-	.short	.Ltmp636-.Ltmp635
-.Ltmp635:
+.Ltmp677:
+	.short	.Ltmp679-.Ltmp678
+.Ltmp678:
 	.short	4360
 	.long	4187
 	.asciz	"std::chrono::duration<long long,std::ratio<1,1000> >"
 	.p2align	2, 0x0
-.Ltmp636:
-	.short	.Ltmp638-.Ltmp637
-.Ltmp637:
+.Ltmp679:
+	.short	.Ltmp681-.Ltmp680
+.Ltmp680:
 	.short	4360
 	.long	4190
 	.asciz	"std::ratio<1,1000>"
 	.p2align	2, 0x0
-.Ltmp638:
-	.short	.Ltmp640-.Ltmp639
-.Ltmp639:
+.Ltmp681:
+	.short	.Ltmp683-.Ltmp682
+.Ltmp682:
 	.short	4360
 	.long	35
 	.asciz	"size_t"
 	.p2align	2, 0x0
-.Ltmp640:
-	.short	.Ltmp642-.Ltmp641
-.Ltmp641:
+.Ltmp683:
+	.short	.Ltmp685-.Ltmp684
+.Ltmp684:
 	.short	4360
 	.long	19
 	.asciz	"std::streamoff"
 	.p2align	2, 0x0
-.Ltmp642:
-	.short	.Ltmp644-.Ltmp643
-.Ltmp643:
+.Ltmp685:
+	.short	.Ltmp687-.Ltmp686
+.Ltmp686:
 	.short	4360
 	.long	4253
 	.asciz	"_Mbstatet"
 	.p2align	2, 0x0
-.Ltmp644:
-	.short	.Ltmp646-.Ltmp645
-.Ltmp645:
+.Ltmp687:
+	.short	.Ltmp689-.Ltmp688
+.Ltmp688:
 	.short	4360
 	.long	4253
 	.asciz	"mbstate_t"
 	.p2align	2, 0x0
-.Ltmp646:
-	.short	.Ltmp648-.Ltmp647
-.Ltmp647:
+.Ltmp689:
+	.short	.Ltmp691-.Ltmp690
+.Ltmp690:
 	.short	4360
 	.long	4227
 	.asciz	"std::_Narrow_char_traits<char,int>"
 	.p2align	2, 0x0
-.Ltmp648:
-	.short	.Ltmp650-.Ltmp649
-.Ltmp649:
+.Ltmp691:
+	.short	.Ltmp693-.Ltmp692
+.Ltmp692:
 	.short	4360
 	.long	4250
 	.asciz	"std::_Char_traits<char,int>"
 	.p2align	2, 0x0
-.Ltmp650:
-	.short	.Ltmp652-.Ltmp651
-.Ltmp651:
+.Ltmp693:
+	.short	.Ltmp695-.Ltmp694
+.Ltmp694:
 	.short	4360
 	.long	4253
 	.asciz	"_Mbstatet"
 	.p2align	2, 0x0
-.Ltmp652:
-	.short	.Ltmp654-.Ltmp653
-.Ltmp653:
+.Ltmp695:
+	.short	.Ltmp697-.Ltmp696
+.Ltmp696:
 	.short	4360
 	.long	19
 	.asciz	"std::streamsize"
 	.p2align	2, 0x0
-.Ltmp654:
-	.short	.Ltmp656-.Ltmp655
-.Ltmp655:
+.Ltmp697:
+	.short	.Ltmp699-.Ltmp698
+.Ltmp698:
 	.short	4360
 	.long	4327
 	.asciz	"ios_base"
 	.p2align	2, 0x0
-.Ltmp656:
-	.short	.Ltmp658-.Ltmp657
-.Ltmp657:
+.Ltmp699:
+	.short	.Ltmp701-.Ltmp700
+.Ltmp700:
 	.short	4360
 	.long	4348
 	.asciz	"std::_Iosb<int>"
 	.p2align	2, 0x0
-.Ltmp658:
-	.short	.Ltmp660-.Ltmp659
-.Ltmp659:
+.Ltmp701:
+	.short	.Ltmp703-.Ltmp702
+.Ltmp702:
 	.short	4360
 	.long	4355
 	.asciz	"ios_base::_Iosarray"
 	.p2align	2, 0x0
-.Ltmp660:
-	.short	.Ltmp662-.Ltmp661
-.Ltmp661:
+.Ltmp703:
+	.short	.Ltmp705-.Ltmp704
+.Ltmp704:
 	.short	4360
 	.long	4361
 	.asciz	"ios_base::_Fnarray"
 	.p2align	2, 0x0
-.Ltmp662:
-	.short	.Ltmp664-.Ltmp663
-.Ltmp663:
+.Ltmp705:
+	.short	.Ltmp707-.Ltmp706
+.Ltmp706:
 	.short	4360
 	.long	4667
 	.asciz	"std::string"
 	.p2align	2, 0x0
-.Ltmp664:
-	.short	.Ltmp666-.Ltmp665
-.Ltmp665:
+.Ltmp707:
+	.short	.Ltmp709-.Ltmp708
+.Ltmp708:
 	.short	4360
 	.long	4418
 	.asciz	"locale"
 	.p2align	2, 0x0
-.Ltmp666:
-	.short	.Ltmp668-.Ltmp667
-.Ltmp667:
+.Ltmp709:
+	.short	.Ltmp711-.Ltmp710
+.Ltmp710:
 	.short	4360
 	.long	4437
 	.asciz	"_Crt_new_delete"
 	.p2align	2, 0x0
-.Ltmp668:
-	.short	.Ltmp670-.Ltmp669
-.Ltmp669:
+.Ltmp711:
+	.short	.Ltmp713-.Ltmp712
+.Ltmp712:
 	.short	4360
 	.long	4440
 	.asciz	"std::_Locbase<int>"
 	.p2align	2, 0x0
-.Ltmp670:
-	.short	.Ltmp672-.Ltmp671
-.Ltmp671:
+.Ltmp713:
+	.short	.Ltmp715-.Ltmp714
+.Ltmp714:
 	.short	4360
 	.long	4471
 	.asciz	"locale::_Locimp"
 	.p2align	2, 0x0
-.Ltmp672:
-	.short	.Ltmp674-.Ltmp673
-.Ltmp673:
+.Ltmp715:
+	.short	.Ltmp717-.Ltmp716
+.Ltmp716:
 	.short	4360
 	.long	4798
 	.asciz	"std::_Rebind_alloc_t<std::allocator<char>,char>"
 	.p2align	2, 0x0
-.Ltmp674:
-	.short	.Ltmp676-.Ltmp675
-.Ltmp675:
+.Ltmp717:
+	.short	.Ltmp719-.Ltmp718
+.Ltmp718:
 	.short	4360
 	.long	19
 	.asciz	"ptrdiff_t"
 	.p2align	2, 0x0
-.Ltmp676:
-	.short	.Ltmp678-.Ltmp677
-.Ltmp677:
+.Ltmp719:
+	.short	.Ltmp721-.Ltmp720
+.Ltmp720:
 	.short	4360
 	.long	32
 	.asciz	"uint8_t"
 	.p2align	2, 0x0
-.Ltmp678:
-	.short	.Ltmp680-.Ltmp679
-.Ltmp679:
+.Ltmp721:
+	.short	.Ltmp723-.Ltmp722
+.Ltmp722:
 	.short	4360
 	.long	4667
 	.asciz	"std::basic_string<char,std::char_traits<char>,std::allocator<char> >"
 	.p2align	2, 0x0
-.Ltmp680:
-	.short	.Ltmp682-.Ltmp681
-.Ltmp681:
+.Ltmp723:
+	.short	.Ltmp725-.Ltmp724
+.Ltmp724:
 	.short	4360
 	.long	34
 	.asciz	"std::_Atomic_counter_t"
 	.p2align	2, 0x0
-.Ltmp682:
-	.short	.Ltmp684-.Ltmp683
-.Ltmp683:
+.Ltmp725:
+	.short	.Ltmp727-.Ltmp726
+.Ltmp726:
 	.short	4360
 	.long	4685
 	.asciz	"locale::facet"
 	.p2align	2, 0x0
-.Ltmp684:
-	.short	.Ltmp686-.Ltmp685
-.Ltmp685:
+.Ltmp727:
+	.short	.Ltmp729-.Ltmp728
+.Ltmp728:
 	.short	4360
 	.long	4727
 	.asciz	"_Locinfo"
 	.p2align	2, 0x0
-.Ltmp686:
-	.short	.Ltmp688-.Ltmp687
-.Ltmp687:
+.Ltmp729:
+	.short	.Ltmp731-.Ltmp730
+.Ltmp730:
 	.short	4360
 	.long	4741
 	.asciz	"locale::id"
 	.p2align	2, 0x0
-.Ltmp688:
-	.short	.Ltmp690-.Ltmp689
-.Ltmp689:
+.Ltmp731:
+	.short	.Ltmp733-.Ltmp732
+.Ltmp732:
 	.short	4360
 	.long	4746
 	.asciz	"locale::_Facet_guard"
 	.p2align	2, 0x0
-.Ltmp690:
-	.short	.Ltmp692-.Ltmp691
-.Ltmp691:
+.Ltmp733:
+	.short	.Ltmp735-.Ltmp734
+.Ltmp734:
 	.short	4360
 	.long	4764
 	.asciz	"_Yarn<char>"
 	.p2align	2, 0x0
-.Ltmp692:
-	.short	.Ltmp694-.Ltmp693
-.Ltmp693:
+.Ltmp735:
+	.short	.Ltmp737-.Ltmp736
+.Ltmp736:
 	.short	4360
 	.long	4773
 	.asciz	"std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>"
 	.p2align	2, 0x0
-.Ltmp694:
-	.short	.Ltmp696-.Ltmp695
-.Ltmp695:
+.Ltmp737:
+	.short	.Ltmp739-.Ltmp738
+.Ltmp738:
 	.short	4360
 	.long	4961
 	.asciz	"std::bool_constant<true>"
 	.p2align	2, 0x0
-.Ltmp696:
-	.short	.Ltmp698-.Ltmp697
-.Ltmp697:
+.Ltmp739:
+	.short	.Ltmp741-.Ltmp740
+.Ltmp740:
 	.short	4360
 	.long	4961
 	.asciz	"std::true_type"
 	.p2align	2, 0x0
-.Ltmp698:
-	.short	.Ltmp700-.Ltmp699
-.Ltmp699:
+.Ltmp741:
+	.short	.Ltmp743-.Ltmp742
+.Ltmp742:
 	.short	4360
 	.long	4798
 	.asciz	"std::allocator<char>"
 	.p2align	2, 0x0
-.Ltmp700:
-	.short	.Ltmp702-.Ltmp701
-.Ltmp701:
+.Ltmp743:
+	.short	.Ltmp745-.Ltmp744
+.Ltmp744:
 	.short	4360
 	.long	35
 	.asciz	"size_type"
 	.p2align	2, 0x0
-.Ltmp702:
-	.short	.Ltmp704-.Ltmp703
-.Ltmp703:
+.Ltmp745:
+	.short	.Ltmp747-.Ltmp746
+.Ltmp746:
 	.short	4360
 	.long	4849
 	.asciz	"std::basic_string_view<char,std::char_traits<char> >"
 	.p2align	2, 0x0
-.Ltmp704:
-	.short	.Ltmp706-.Ltmp705
-.Ltmp705:
+.Ltmp747:
+	.short	.Ltmp749-.Ltmp748
+.Ltmp748:
 	.short	4360
 	.long	4979
 	.asciz	"std::_Container_base"
 	.p2align	2, 0x0
-.Ltmp706:
-	.short	.Ltmp708-.Ltmp707
-.Ltmp707:
+.Ltmp749:
+	.short	.Ltmp751-.Ltmp750
+.Ltmp750:
 	.short	4360
 	.long	4865
 	.asciz	"std::_String_val<std::_Simple_types<char> >"
 	.p2align	2, 0x0
-.Ltmp708:
-	.short	.Ltmp710-.Ltmp709
-.Ltmp709:
+.Ltmp751:
+	.short	.Ltmp753-.Ltmp752
+.Ltmp752:
 	.short	4360
 	.long	4998
 	.asciz	"std::conditional_t<_Is_default_allocator<allocator<char> >::value,_Default_allocator_traits<allocator<char> >,_Normal_allocator_traits<allocator<char> > >"
 	.p2align	2, 0x0
-.Ltmp710:
-	.short	.Ltmp712-.Ltmp711
-.Ltmp711:
+.Ltmp753:
+	.short	.Ltmp755-.Ltmp754
+.Ltmp754:
 	.short	4360
 	.long	4869
 	.asciz	"std::allocator_traits<std::allocator<char> >"
 	.p2align	2, 0x0
-.Ltmp712:
-	.short	.Ltmp714-.Ltmp713
-.Ltmp713:
+.Ltmp755:
+	.short	.Ltmp757-.Ltmp756
+.Ltmp756:
 	.short	4360
 	.long	4872
 	.asciz	"std::char_traits<char>"
 	.p2align	2, 0x0
-.Ltmp714:
-	.short	.Ltmp716-.Ltmp715
-.Ltmp715:
+.Ltmp757:
+	.short	.Ltmp759-.Ltmp758
+.Ltmp758:
 	.short	4360
 	.long	4879
 	.asciz	"_Facet_base"
 	.p2align	2, 0x0
-.Ltmp716:
-	.short	.Ltmp718-.Ltmp717
-.Ltmp717:
+.Ltmp759:
+	.short	.Ltmp761-.Ltmp760
+.Ltmp760:
 	.short	4360
 	.long	4902
 	.asciz	"_Lockit"
 	.p2align	2, 0x0
-.Ltmp718:
-	.short	.Ltmp720-.Ltmp719
-.Ltmp719:
+.Ltmp761:
+	.short	.Ltmp763-.Ltmp762
+.Ltmp762:
 	.short	4360
 	.long	4923
 	.asciz	"_Yarn<wchar_t>"
 	.p2align	2, 0x0
-.Ltmp720:
-	.short	.Ltmp722-.Ltmp721
-.Ltmp721:
+.Ltmp763:
+	.short	.Ltmp765-.Ltmp764
+.Ltmp764:
 	.short	4360
 	.long	4926
 	.asciz	"_Collvec"
 	.p2align	2, 0x0
-.Ltmp722:
-	.short	.Ltmp724-.Ltmp723
-.Ltmp723:
+.Ltmp765:
+	.short	.Ltmp767-.Ltmp766
+.Ltmp766:
 	.short	4360
 	.long	4932
 	.asciz	"_Ctypevec"
 	.p2align	2, 0x0
-.Ltmp724:
-	.short	.Ltmp726-.Ltmp725
-.Ltmp725:
+.Ltmp767:
+	.short	.Ltmp769-.Ltmp768
+.Ltmp768:
 	.short	4360
 	.long	4936
 	.asciz	"_Cvtvec"
 	.p2align	2, 0x0
-.Ltmp726:
-	.short	.Ltmp728-.Ltmp727
-.Ltmp727:
+.Ltmp769:
+	.short	.Ltmp771-.Ltmp770
+.Ltmp770:
 	.short	4360
 	.long	4939
 	.asciz	"lconv"
 	.p2align	2, 0x0
-.Ltmp728:
-	.short	.Ltmp730-.Ltmp729
-.Ltmp729:
+.Ltmp771:
+	.short	.Ltmp773-.Ltmp772
+.Ltmp772:
 	.short	4360
 	.long	4955
 	.asciz	"_Timevec"
 	.p2align	2, 0x0
-.Ltmp730:
-	.short	.Ltmp732-.Ltmp731
-.Ltmp731:
+.Ltmp773:
+	.short	.Ltmp775-.Ltmp774
+.Ltmp774:
 	.short	4360
 	.long	4961
 	.asciz	"std::integral_constant<bool,1>"
 	.p2align	2, 0x0
-.Ltmp732:
-	.short	.Ltmp734-.Ltmp733
-.Ltmp733:
+.Ltmp775:
+	.short	.Ltmp777-.Ltmp776
+.Ltmp776:
 	.short	4360
 	.long	4979
 	.asciz	"std::_Container_base12"
 	.p2align	2, 0x0
-.Ltmp734:
-	.short	.Ltmp736-.Ltmp735
-.Ltmp735:
+.Ltmp777:
+	.short	.Ltmp779-.Ltmp778
+.Ltmp778:
 	.short	4360
 	.long	4986
 	.asciz	"std::_String_val<std::_Simple_types<char> >::_Bxty"
 	.p2align	2, 0x0
-.Ltmp736:
-	.short	.Ltmp738-.Ltmp737
-.Ltmp737:
+.Ltmp779:
+	.short	.Ltmp781-.Ltmp780
+.Ltmp780:
 	.short	4360
 	.long	35
 	.asciz	"size_type"
 	.p2align	2, 0x0
-.Ltmp738:
-	.short	.Ltmp740-.Ltmp739
-.Ltmp739:
+.Ltmp781:
+	.short	.Ltmp783-.Ltmp782
+.Ltmp782:
 	.short	4360
 	.long	5016
 	.asciz	"std::bool_constant<false>"
 	.p2align	2, 0x0
-.Ltmp740:
-	.short	.Ltmp742-.Ltmp741
-.Ltmp741:
+.Ltmp783:
+	.short	.Ltmp785-.Ltmp784
+.Ltmp784:
 	.short	4360
 	.long	5016
 	.asciz	"std::false_type"
 	.p2align	2, 0x0
-.Ltmp742:
-	.short	.Ltmp744-.Ltmp743
-.Ltmp743:
+.Ltmp785:
+	.short	.Ltmp787-.Ltmp786
+.Ltmp786:
 	.short	4360
 	.long	4998
 	.asciz	"std::_Default_allocator_traits<std::allocator<char> >"
 	.p2align	2, 0x0
-.Ltmp744:
-	.short	.Ltmp746-.Ltmp745
-.Ltmp745:
+.Ltmp787:
+	.short	.Ltmp789-.Ltmp788
+.Ltmp788:
 	.short	4360
 	.long	5010
 	.asciz	"std::_Container_proxy"
 	.p2align	2, 0x0
-.Ltmp746:
-	.short	.Ltmp748-.Ltmp747
-.Ltmp747:
+.Ltmp789:
+	.short	.Ltmp791-.Ltmp790
+.Ltmp790:
 	.short	4360
 	.long	5016
 	.asciz	"std::integral_constant<bool,0>"
 	.p2align	2, 0x0
-.Ltmp748:
-	.short	.Ltmp750-.Ltmp749
-.Ltmp749:
+.Ltmp791:
+	.short	.Ltmp793-.Ltmp792
+.Ltmp792:
 	.short	4360
 	.long	5034
 	.asciz	"std::_Iterator_base12"
 	.p2align	2, 0x0
-.Ltmp750:
-	.short	.Ltmp752-.Ltmp751
-.Ltmp751:
+.Ltmp793:
+	.short	.Ltmp795-.Ltmp794
+.Ltmp794:
 	.short	4360
 	.long	5052
 	.asciz	"basic_ostream<char,std::char_traits<char> >::sentry"
 	.p2align	2, 0x0
-.Ltmp752:
-	.short	.Ltmp754-.Ltmp753
-.Ltmp753:
+.Ltmp795:
+	.short	.Ltmp797-.Ltmp796
+.Ltmp796:
 	.short	4360
 	.long	5064
 	.asciz	"basic_ostream<char,std::char_traits<char> >::_Sentry_base"
 	.p2align	2, 0x0
-.Ltmp754:
-	.short	.Ltmp756-.Ltmp755
-.Ltmp755:
+.Ltmp797:
+	.short	.Ltmp799-.Ltmp798
+.Ltmp798:
 	.short	4360
 	.long	5094
 	.asciz	"__m256d"
 	.p2align	2, 0x0
-.Ltmp756:
-	.short	.Ltmp758-.Ltmp757
-.Ltmp757:
+.Ltmp799:
+	.short	.Ltmp801-.Ltmp800
+.Ltmp800:
 	.short	4360
 	.long	5094
 	.asciz	"__v4df"
 	.p2align	2, 0x0
-.Ltmp758:
-	.short	.Ltmp760-.Ltmp759
-.Ltmp759:
+.Ltmp801:
+	.short	.Ltmp803-.Ltmp802
+.Ltmp802:
 	.short	4360
 	.long	5094
 	.asciz	"__m256d_u"
 	.p2align	2, 0x0
-.Ltmp760:
-	.short	.Ltmp762-.Ltmp761
-.Ltmp761:
+.Ltmp803:
+	.short	.Ltmp805-.Ltmp804
+.Ltmp804:
 	.short	4360
-	.long	5109
+	.long	5108
 	.asciz	"__storeu_pd"
 	.p2align	2, 0x0
-.Ltmp762:
-	.short	.Ltmp764-.Ltmp763
-.Ltmp763:
+.Ltmp805:
+	.short	.Ltmp807-.Ltmp806
+.Ltmp806:
 	.short	4360
 	.long	19
 	.asciz	"std::decay_t<_Conditional_type<long long,long long> >"
 	.p2align	2, 0x0
-.Ltmp764:
-	.short	.Ltmp766-.Ltmp765
-.Ltmp765:
+.Ltmp807:
+	.short	.Ltmp809-.Ltmp808
+.Ltmp808:
 	.short	4360
 	.long	19
 	.asciz	"std::common_type_t<_ToRep,long long,intmax_t>"
 	.p2align	2, 0x0
-.Ltmp766:
-	.short	.Ltmp768-.Ltmp767
-.Ltmp767:
+.Ltmp809:
+	.short	.Ltmp811-.Ltmp810
+.Ltmp810:
 	.short	4360
-	.long	5114
+	.long	5113
 	.asciz	"std::ratio<1,1000000>"
 	.p2align	2, 0x0
-.Ltmp768:
-.Ltmp612:
+.Ltmp811:
+.Ltmp655:
 	.p2align	2, 0x0
 	.cv_filechecksums
 	.cv_stringtable
 	.long	241
-	.long	.Ltmp770-.Ltmp769
-.Ltmp769:
-	.short	.Ltmp772-.Ltmp771
-.Ltmp771:
+	.long	.Ltmp813-.Ltmp812
+.Ltmp812:
+	.short	.Ltmp815-.Ltmp814
+.Ltmp814:
 	.short	4428
-	.long	5121
+	.long	5120
 	.p2align	2, 0x0
-.Ltmp772:
-.Ltmp770:
+.Ltmp815:
+.Ltmp813:
 	.p2align	2, 0x0
 	.section	.debug$T,"dr"
 	.p2align	2, 0x0
@@ -15441,10 +15741,6 @@ main.extracted:
 	.long	0x13ef
 	.asciz	"main.extracted"
 	.byte	241
-	.short	0xa
-	.short	0x1002
-	.long	0x13e6
-	.long	0x2c
 	.short	0x5e
 	.short	0x1505
 	.short	0x0
@@ -15460,7 +15756,7 @@ main.extracted:
 	.byte	241
 	.short	0xa
 	.short	0x1002
-	.long	0x13f2
+	.long	0x13f1
 	.long	0x1000c
 	.short	0x12
 	.short	0x1203
@@ -15475,7 +15771,7 @@ main.extracted:
 	.short	0x1505
 	.short	0x1
 	.short	0x200
-	.long	0x13f4
+	.long	0x13f3
 	.long	0x0
 	.long	0x0
 	.short	0x20
@@ -15493,8 +15789,8 @@ main.extracted:
 	.byte	241
 	.short	0xe
 	.short	0x1606
+	.long	0x13f4
 	.long	0x13f5
-	.long	0x13f6
 	.long	0xcd4
 	.short	0x4a
 	.short	0x1505
@@ -15520,7 +15816,7 @@ main.extracted:
 	.asciz	"den"
 	.short	0x1510
 	.short	0x0
-	.long	0x13f8
+	.long	0x13f7
 	.asciz	"type"
 	.byte	243
 	.byte	242
@@ -15529,7 +15825,7 @@ main.extracted:
 	.short	0x1505
 	.short	0x3
 	.short	0x210
-	.long	0x13f9
+	.long	0x13f8
 	.long	0x0
 	.long	0x0
 	.short	0x1
@@ -15539,7 +15835,7 @@ main.extracted:
 	.byte	241
 	.short	0xe
 	.short	0x1606
-	.long	0x13fa
+	.long	0x13f9
 	.long	0x101e
 	.long	0x43
 	.short	0x4a
@@ -15572,11 +15868,11 @@ main.extracted:
 	.short	0x1a
 	.short	0x1603
 	.short	0x5
-	.long	0x13fc
-	.long	0x13ff
-	.long	0x13fd
+	.long	0x13fb
 	.long	0x13fe
-	.long	0x1400
+	.long	0x13fc
+	.long	0x13fd
+	.long	0x13ff
 	.byte	242
 	.byte	241
 	.globl	_fltused
