@@ -16,7 +16,7 @@ using namespace std;
 const long ITERATIONS = 500000000L;
 
 int main() {
-	double a[4], b[4], c[4], d[4], e[4], f[4], g[4];
+	double a[4], b[4], c[4], d[4], e[4], f[4];
 
 	//the values of these registers do not change
 	__m256d x1 = _mm256_set_pd(2.0, 2.0, 2.0, 2.0);
@@ -82,14 +82,13 @@ int main() {
 	auto res = stop - start;
 
 	_mm256_storeu_pd(a, x3);
-	_mm256_storeu_pd(b, x3);
-	_mm256_storeu_pd(c, x3);
-	_mm256_storeu_pd(d, x3);
-	_mm256_storeu_pd(e, x3);
-	_mm256_storeu_pd(f, x3);
-	_mm256_storeu_pd(g, x3);
+	_mm256_storeu_pd(b, x6);
+	_mm256_storeu_pd(c, x8);
+	_mm256_storeu_pd(d, x10);
+	_mm256_storeu_pd(e, x12);
+	_mm256_storeu_pd(f, x14);
 	for (int i = 0; i < 4; i++) {
-		cout << a[i] << " " << b[i] << " " << c[i] << " " << d[i] << " " << e[i] << " " << f[i] << " " << g[i] << endl;
+		cout << a[i] << " " << b[i] << " " << c[i] << " " << d[i] << " " << e[i] << " " << f[i] << endl;
 	}
 
 	unsigned long long int flop = 100ULL * ITERATIONS * 24 * 2 * 4;
