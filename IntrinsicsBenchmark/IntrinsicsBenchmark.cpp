@@ -120,7 +120,7 @@ int main() {
         cout << a[i] << " " << b[i] << " " << c[i] << " " << d[i] << " " << e[i] << " " << f[i] << " " << g[i] << " " << h[i] << " " << ij[i] << " " << ji[i] << endl;
     }
 
-    unsigned long long int flop = ITERATIONS * 40 * 2 * 4;
+    unsigned long long flop = ITERATIONS * 40 * 2 * 4;
     cout << "Time: " << res << " seconds;" << endl;
     cout << "Performance: " << flop / (res * 1.0e9) << " GFLOPS" << endl;
     return 0;
