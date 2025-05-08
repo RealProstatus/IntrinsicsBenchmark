@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalOptions>-march=native -S -O3 /Qiopenmp %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-march=native -mtune=native -O3 /Qiopenmp %(AdditionalOptions)</AdditionalOptions>
       <OpenMP>GenerateParallelCode</OpenMP>
     </ClCompile>
     <Link>
@@ -130,6 +130,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="IntrinsicsBenchmark.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IntrinsicsBenchmark.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
